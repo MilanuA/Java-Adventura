@@ -26,7 +26,7 @@ Výsledek: Najdeš Ledový klíč.
 
 ### 4. Bratislava
 Popis: Velké město. Muzeum má zavřený trezor.
-Předmět: Najdi mapu Slovenska (v Zřícenině).
+Předmět: Najdi mapu Slovenska (v Zřícenině). Pod stromem je jablko, které je potřeba donést Poutnikovi v Zřícenině.
 Postava: Správce muzea – pustí tě do trezoru, pokud máš mapu.
 Výsledek: Získáš Zlatý klíč.
 
@@ -47,15 +47,22 @@ Předmět: Rybářský prut (leží na břehu, volně k sebrání).
 Akce: Použij prut → získej rybu → dones do Oravy.
 
 ## Předměty a využití:
-Předmět | Kde získat | Použití
-Sekera | Orava (od dřevorubce) | Rozseknutí pařezu → Dřevěný klíč
-Zrcadlo | Košice (výměna za prsten) | Rozmrazení jezera v Tatrách → Ledový klíč
-Mapa Slovenska | Zřícenina (v truhle) | Přístup do trezoru v Bratislavě
-Stříbrný prsten | Zřícenina (v truhle) | Výměna za zrcadlo v Košicích
-Páčidlo | Zřícenina (od poutníka) | Otevření truhly ve Zřícenině
-Jablko | Bratislava (pod stromem) | Dá se poutníkovi ve Zřícenině
-Rybářský prut | Dunaj (leží na břehu) | Chytání ryby
-Ryba | Dunaj (pomocí prutu) | Dáš dřevorubci v Oravě → získáš sekeru
+| Příkaz                             | Popis                                                                 | Příklad použití                 |
+|------------------------------------|-----------------------------------------------------------------------|---------------------------------|
+| jdi <místo>                        | Přesun do jiné lokace, pokud cesta existuje.                         | jdi orava                       |
+| napoveda                           | Vypíše seznam dostupných příkazů.                                    | napoveda                        |
+| zkontroluj                         | Ukáže inventář hráče a získané klíče.                                | zkontroluj                      |
+| konec                              | Ukončí hru.                                                           | konec                           |
+| vezmi <věc>                        | Vezme předmět z aktuální místnosti.                                  | vezmi prut                      |
+| pouzij <věc>                       | Použije konkrétní předmět (např. sekera, mapa, zrcadlo, prut…).      | pouzij zrcadlo                  |
+| vymen <mujPredmet> za <jinyPredmet> | Provede výměnu předmětů s NPC.                                       | vymen prsten za zrcadlo         |
+| mluv <postava>                     | Zahájí rozhovor s postavou v místnosti.                              | mluv dřevorubec                 |
+| dej <věc> <postava>                | Předá předmět postavě (např. dáš rybu dřevorubci).                    | dej ryba dřevorubec             |
+| prohledni <objekt>                 | Prozkoumá objekt v lokaci (např. truhlu, pařez, jezero).             | prohledni pařez                 |
+| chytej / pouzij prut               | Speciální akce pro chytání ryby u Dunaje.                            | chytej nebo pouzij prut         |
+| rozsekej pařez                     | Použije sekeru na pařez v Oravě → získání dřevěného klíče.           | rozsekej pařez                  |
+| odemkni branu                      | Ve Spišském hradě – použije 3 klíče a ukončí hru vítězstvím.         | odemkni branu                   |
+
 
 ## Závěr hry
 Jakmile máš:
@@ -67,19 +74,16 @@ Jakmile máš:
 
 
 ## Příkazy:
+| Předmět          | Kde získat                    | Použití                                               |
+|------------------|-------------------------------|--------------------------------------------------------|
+| Sekera           | Orava (od dřevorubce)         | Rozseknutí pařezu → Dřevěný klíč                       |
+| Zrcadlo          | Košice (výměna za prsten)     | Rozmrazení jezera v Tatrách → Ledový klíč             |
+| Mapa Slovenska   | Zřícenina (v truhle)          | Přístup do trezoru v Bratislavě                        |
+| Stříbrný prsten  | Zřícenina (v truhle)          | Výměna za zrcadlo v Košicích                           |
+| Páčidlo          | Zřícenina (od poutníka)       | Otevření truhly ve Zřícenině                           |
+| Jablko           | Bratislava (pod stromem)      | Dá se poutníkovi ve Zřícenině                          |
+| Rybářský prut    | Dunaj (leží na břehu)         | Chytání ryby                                           |
+| Ryba             | Dunaj (pomocí prutu)          | Dáš dřevorubci v Oravě → získáš sekeru                 |
 
-Příkaz | Popis | Příklad použití
-jdi <místo> | Přesun do jiné lokace, pokud cesta existuje. | jdi orava
-napoveda | Vypíše seznam dostupných příkazů. | napoveda
-zkontroluj | Ukáže inventář hráče a získané klíče. | zkontroluj
-konec | Ukončí hru. | konec
-vezmi <věc> | Vezme předmět z aktuální místnosti. | vezmi prut
-pouzij <věc> | Použije konkrétní předmět (např. sekera, mapa, zrcadlo, prut…). | pouzij zrcadlo
-vymen <mujPredmet> za <jinyPredmet> | Provede výměnu předmětů s NPC. | vymen prsten za zrcadlo
-mluv <postava> | Zahájí rozhovor s postavou v místnosti. | mluv dřevorubec
-dej <věc> <postava> | Předá předmět postavě (např. dáš rybu dřevorubci). | dej ryba dřevorubec
-prohledni <objekt> | Prozkoumá objekt v lokaci (např. truhlu, pařez, jezero). | prohledni pařez
-chytej / pouzij prut | Speciální akce pro chytání ryby u Dunaje. | chytej nebo pouzij prut
-rozsekej pařez | Použije sekeru na pařez v Oravě → získání dřevěného klíče. | rozsekej pařez
-odemkni branu | Ve Spišském hradě – použije 3 klíče a ukončí hru vítězstvím. | odemkni branu
+
 
