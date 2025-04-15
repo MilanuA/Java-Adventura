@@ -1,6 +1,5 @@
 package cz.vse.adventura.logika;
 
-
 /**
  *  Class HerniPlan - třída představující mapu a stav adventury.
  * 
@@ -35,7 +34,13 @@ public class HerniPlan {
         Prostor jeskyne = new Prostor("jeskyně","stará plesnivá jeskyně");
         Prostor les = new Prostor("les","les s jahodami, malinami a pramenem vody");
         Prostor hlubokyLes = new Prostor("hluboký_les","temný les, ve kterém lze potkat vlka");
-        
+
+        Vec vino = new Vec("pomoc", true, 10);
+        Vec socha = new Vec("pomoc", false);
+
+        domecek.pridejVec(vino);
+        chaloupka.pridejVec(socha);
+
         // přiřazují se průchody mezi prostory (sousedící prostory)
         domecek.setVychod(les);
         les.setVychod(domecek);

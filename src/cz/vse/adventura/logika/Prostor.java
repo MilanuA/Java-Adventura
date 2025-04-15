@@ -1,10 +1,6 @@
 package cz.vse.adventura.logika;
 
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Set;
-import java.util.HashSet;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -23,7 +19,8 @@ public class Prostor {
 
     private String nazev;
     private String popis;
-    private Set<Prostor> vychody;   // obsahuje sousední místnosti
+    private Set<Prostor> vychody = new HashSet<>();// obsahuje sousední místnosti
+    private Map<String, Vec> veci;
 
     /**
      * Vytvoření prostoru se zadaným popisem, např. "kuchyň", "hala", "trávník
@@ -39,6 +36,29 @@ public class Prostor {
         vychody = new HashSet<>();
     }
 
+    public boolean pridejVec(Vec v)
+    {
+        String nazev = v.getNazev();
+
+        if(veci.containsKey(nazev))
+            return false;
+
+        veci.put(nazev, v);
+        return true;
+    }
+
+    public Vec getVec(String nazev){
+        return veci.get(nazev);
+    }
+
+    public boolean odeberVec(String nazev){
+
+        if(!veci.containsKey(nazev))
+            return false;
+
+        veci.remove(nazev);
+        return true;
+    }
     /**
      * Definuje východ z prostoru (sousední/vedlejsi prostor). Vzhledem k tomu,
      * že je použit Set pro uložení východů, může být sousední prostor uveden
@@ -118,7 +138,7 @@ public class Prostor {
      */
     public String dlouhyPopis() {
         return "Jsi v mistnosti/prostoru " + popis + ".\n"
-                + popisVychodu();
+                + popisVychodu() + "\n" + popisVeci();
     }
 
     /**
@@ -131,6 +151,14 @@ public class Prostor {
         String vracenyText = "východy:";
         for (Prostor sousedni : vychody) {
             vracenyText += " " + sousedni.getNazev();
+        }
+        return vracenyText;
+    }
+
+    private String popisVeci() {
+        String vracenyText = "věci: ";
+        for (Vec vec : veci.values()) {
+            vracenyText += " " + vec.getNazev();
         }
         return vracenyText;
     }
