@@ -1,4 +1,4 @@
-# Tajemství Spišského pokladu
+#Tajemství Spišského pokladu
 
                 [Tatry]
                    |
@@ -7,8 +7,8 @@
   [Orava] - [Spišský hrad] - [Bratislava]
 
 
-## Průběh hry:
-### 1. Spišský hrad (startovací místo)
+##Průběh hry:
+###1. Spišský hrad (startovací místo)
 Popis: Stará kamenná brána se třemi otvory. Potřebuješ 3 klíče: ledový, dřevěný, zlatý.
 Postava: Starý duch Strážce hradu – dá nápovědu:
 
