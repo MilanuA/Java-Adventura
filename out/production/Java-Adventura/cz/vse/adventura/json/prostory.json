@@ -1,0 +1,44 @@
+[
+  {
+    "nazev": "zřícenina",
+    "popis": "Zbytky staré tvrze. Nachází se tu truhla a poutník.",
+    "vychody": ["tatry", "košice", "spišský hrad"],
+    "veci": ["páčidlo", "stříbrný prsten", "mapa Slovenska"]
+  },
+  {
+    "nazev": "spišský hrad",
+    "popis": "Starobylý hrad s bránou, kterou lze otevřít pouze třemi klíči.",
+    "vychody": ["orava", "bratislava", "zřícenina"],
+    "veci" : []
+  },
+  {
+    "nazev": "orava",
+    "popis": "Lesní vesnice s dřevorubcem a pařezem.",
+    "vychody": ["spišský hrad"],
+    "veci" : []
+  },
+  {
+    "nazev": "tatry",
+    "popis": "Zamrzlé jezero s klíčem na dně.",
+    "vychody": ["zřícenina"],
+    "veci" : []
+  },
+  {
+    "nazev": "bratislava",
+    "popis": "Hlavní město. U muzea je strom s jablkem.",
+    "vychody": ["spišský hrad"],
+    "veci": ["jablko"]
+  },
+  {
+    "nazev": "košice",
+    "popis": "Městský trh s kupkyní.",
+    "vychody": ["zřícenina"],
+    "veci": ["zrcadlo"]
+  },
+  {
+    "nazev": "dunaj",
+    "popis": "Řeka, kde můžeš rybařit.",
+    "vychody": ["košice"],
+    "veci": ["rybářský prut"]
+  }
+]
