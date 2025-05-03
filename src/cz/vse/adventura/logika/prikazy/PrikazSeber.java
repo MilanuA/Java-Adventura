@@ -6,11 +6,6 @@ public class PrikazSeber implements IPrikaz {
     private static final String NAZEV = "seber";
     private HerniPlan plan;
 
-    /**
-    *  Konstruktor třídy
-    *
-    *  @param plan herní plán, ve kterém se bude ve hře "chodit"
-    */
     public PrikazSeber(HerniPlan plan) {
         this.plan = plan;
     }
@@ -31,12 +26,7 @@ public class PrikazSeber implements IPrikaz {
             return "Něco se pokazilo: " + e.getMessage();
         }
     }
-    
-    /**
-     *  Metoda vrací název příkazu (slovo které používá hráč pro jeho vyvolání)
-     *  
-     *  @ return nazev prikazu
-     */
+
     @Override
     public String getNazev() {
         return NAZEV;

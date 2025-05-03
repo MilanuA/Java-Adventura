@@ -7,13 +7,13 @@
   },
   {
     "nazev": "spišský hrad",
-    "popis": "Starobylý hrad s bránou, kterou lze otevřít pouze třemi klíči.",
+    "popis": "Starobylý hrad s bránou, kterou lze otevřít pouze třemi klíči (ledový, dřevěný a zlatý). Koused od brány sedí duch, se kterým si můžeš promluvit.",
     "vychody": ["orava", "bratislava", "zřícenina"],
     "veci" : []
   },
   {
     "nazev": "orava",
-    "popis": "Lesní vesnice s dřevorubcem a pařezem.",
+    "popis": "Vesnice u lesa. V dáli vidíš podezřelý pařez, ale les je nepropustný. Ve vesnici najdeš dřevorubce, se kterým se dá promluvit.",
     "vychody": ["spišský hrad"],
     "veci" : []
   },
@@ -25,13 +25,13 @@
   },
   {
     "nazev": "bratislava",
-    "popis": "Hlavní město. U muzea je strom s jablkem.",
+    "popis": "Hlavní město, ve kterém se nachází muzeum, jenž má zavřený trezor. Všimneš si správce muzea, se kterým můžeš promluvit.",
     "vychody": ["spišský hrad"],
     "veci": ["jablko"]
   },
   {
     "nazev": "košice",
-    "popis": "Městský trh s kupkyní.",
+    "popis": "Městský trh, ve kterém se nachází kupkyně, se kterou si můžeš promluvit.",
     "vychody": ["zřícenina"],
     "veci": ["zrcadlo"]
   },

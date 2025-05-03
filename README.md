@@ -17,7 +17,7 @@ Postava: Starý duch Strážce hradu – dá nápovědu:
 „Klíče jsou roztroušené po zemi Slovenské. Pouze čisté úmysly odemknou bránu času.”
 
 ### 2. Orava
-Popis: Vesnice u lesa. Les je neprostupný. V dálce je podezřelá chata.
+Popis: Vesnice u lesa. Les je neprostupný. V dálce je podezřelý pařez.
 Postava: Dřevorubec – dá ti sekeru, když mu doneseš rybu z Dunaje.
 Předmět: Po získání sekery můžeš rozseknout pařez v lese a získat Dřevěný klíč.
 
@@ -51,11 +51,11 @@ Akce: Použij prut → získej rybu → dones do Oravy.
 ## Předměty a využití:
 | Příkaz                              | Popis                                                           | Příklad použití         |
 |-------------------------------------|-----------------------------------------------------------------|-------------------------|
-| jdi <místo>                         | Přesun do jiné lokace, pokud cesta existuje.                    | jdi orava               |
-| napoveda                            | Vypíše seznam dostupných příkazů.                               | napoveda                |
-| zkontroluj                          | Zkontroluje, zda má hráč všechny 3 klíče.                       | zkontroluj              |
-| konec                               | Ukončí hru.                                                     | konec                   |
-| seber <věc>                         | Vezme předmět z aktuální místnosti.                             | vezmi prut              |
+| jdi <místo>       ✅                  | Přesun do jiné lokace, pokud cesta existuje.                    | jdi orava               |
+| napoveda     ✅                       | Vypíše seznam dostupných příkazů.                               | napoveda                |
+| zkontroluj       ✅                   | Zkontroluje, zda má hráč všechny 3 klíče.                       | zkontroluj              |
+| konec          ✅                     | Ukončí hru.                                                     | konec                   |
+| seber <věc>       ✅                  | Vezme předmět z aktuální místnosti.                             | seber prut              |
 | pouzij <věc>                        | Použije konkrétní předmět (např. sekera, mapa, zrcadlo, prut…). | pouzij zrcadlo          |
 | vymen <mujPredmet> za <jinyPredmet> | Provede výměnu předmětů s NPC.                                  | vymen prsten za zrcadlo |
 | mluv <postava>                      | Zahájí rozhovor s postavou v místnosti.                         | mluv dřevorubec         |
