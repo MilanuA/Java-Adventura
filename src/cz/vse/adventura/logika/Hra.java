@@ -31,12 +31,9 @@ public class Hra implements IHra {
      */
     public Hra() {
 
-        Set<Vec> vychoziVeci = Set.of(
-                new Vec("ledový klíč", true, 1)
-        );
+        int maximalniHmotnost = 8;
 
-        int maximalniHmotnost = 3;
-        batoh = new Batoh(maximalniHmotnost, vychoziVeci);
+        batoh = new Batoh(maximalniHmotnost);
 
         try {
             herniPlan = new HerniPlan(batoh);
@@ -53,6 +50,7 @@ public class Hra implements IHra {
         platnePrikazy.vlozPrikaz(new PrikazZkontrolujKlice(herniPlan));
         platnePrikazy.vlozPrikaz(new PrikazMluv(herniPlan));
         platnePrikazy.vlozPrikaz(new PrikazDalsi());
+        platnePrikazy.vlozPrikaz(new PrikazVypis(herniPlan));
         platnePrikazy.vlozPrikaz(new PrikazOdemkni(herniPlan));
     }
 

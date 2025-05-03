@@ -8,7 +8,7 @@ enum TypPrikazu {
 
 public class PrikazVypis implements IPrikaz {
 
-    private static final String NAZEV = "vypis";
+    private static final String NAZEV = "vypiš";
 
     private HerniPlan plan;
 
