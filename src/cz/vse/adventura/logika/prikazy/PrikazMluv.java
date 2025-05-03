@@ -22,6 +22,7 @@ public class PrikazMluv implements IPrikaz {
         try{
             Postava postava = plan.getAktualniProstor().getPostavu(nazevPostavy);
             DialogueManager.getInstance().zacitDialog(postava);
+
             return "Rozhovor s postavou " + postava.getNazev() + " zahájen.\n\n" + DialogueManager.getInstance().dalsiRadek();
         }
         catch (Exception e) {

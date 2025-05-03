@@ -23,7 +23,7 @@ public class PrikazZkontrolujKlice implements IPrikaz {
         boolean maZlaty = batoh.getVec("zlatý klíč") != null;
 
         if (maLedovy && maDreveny && maZlaty) {
-            return "Máš všechny tři klíče! Můžeš odemknout bránu na Spišském hradě.";
+            return "Máš všechny tři klíče! Nyní můžeš odemknout bránu na Spišském hradě.";
         }
 
         List<String> chybejici = new ArrayList<>();

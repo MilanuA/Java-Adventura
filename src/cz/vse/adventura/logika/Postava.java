@@ -8,13 +8,19 @@ import java.util.List;
 public class Postava {
     private String nazev;
     private List<String> dialog;
+    private List<String> pokracovaniDialogu;
+
+    private boolean promluvilSPostavou;
 
     @JsonCreator
-    public Postava(@JsonProperty("nazev") String nazev, @JsonProperty("dialog")List<String> dialog) {
+    public Postava(
+            @JsonProperty("nazev") String nazev,
+            @JsonProperty("dialog") List<String> dialog,
+            @JsonProperty("pokracovaniDialogu") List<String> pokracovaniDialogu) {
         this.nazev = nazev;
         this.dialog = dialog;
+        this.pokracovaniDialogu = pokracovaniDialogu;
     }
-
 
     public String getNazev() {
         return nazev;
@@ -33,9 +39,17 @@ public class Postava {
     }
 
     public String getNextDialog(int index) {
-        if (index < dialog.size()) {
-            return dialog.get(index);
+        List<String> aktivniDialog = promluvilSPostavou ? pokracovaniDialogu : dialog;
+
+        if (index >= 0 && index < aktivniDialog.size()) {
+            return aktivniDialog.get(index);
         }
+
         return null;
+    }
+
+
+    public void setPromluvilSPostavou(boolean promluvilSPostavou) {
+        this.promluvilSPostavou = promluvilSPostavou;
     }
 }

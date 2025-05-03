@@ -53,6 +53,7 @@ public class Hra implements IHra {
         platnePrikazy.vlozPrikaz(new PrikazZkontrolujKlice(herniPlan));
         platnePrikazy.vlozPrikaz(new PrikazMluv(herniPlan));
         platnePrikazy.vlozPrikaz(new PrikazDalsi());
+        platnePrikazy.vlozPrikaz(new PrikazOdemkni(herniPlan));
     }
 
     /**
@@ -106,7 +107,7 @@ public class Hra implements IHra {
          {
              DialogueManager dialogManager = DialogueManager.getInstance();
 
-             if (dialogManager.getIsDialogueAktivni() && !Objects.equals(slovoPrikazu, "dalsi")) {
+             if (dialogManager.getIsDialogueAktivni() && !Objects.equals(slovoPrikazu, "další")) {
                  return "Je třeba pokračovat v dialogu. Nelze jej přerušit.";
              }
 

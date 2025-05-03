@@ -1,7 +1,11 @@
 package cz.vse.adventura.logika.dialogue;
 
 import cz.vse.adventura.logika.Postava;
+import cz.vse.adventura.utils.Barvy;
 
+/**
+ * Singleton třída, která spravuje probíhající dialog mezi hráčem a postavou.
+ */
 public class DialogueManager
 {
     private static DialogueManager instance;
@@ -14,6 +18,10 @@ public class DialogueManager
         isDialogueAktivni = false;
     }
 
+    /**
+     * Vrací jedinou instanci třídy DialogueManager
+     * @return instance DialogueManager
+     */
     public static synchronized DialogueManager getInstance() {
         if (instance == null)
         {
@@ -23,29 +31,47 @@ public class DialogueManager
         return instance;
     }
 
+    /**
+     * Zahájí dialog s danou postavou
+     * @param postava Postava, se kterou se vede rozhovor
+     */
     public void zacitDialog(Postava postava){
         isDialogueAktivni = true;
         mluviciPostava = postava;
         radek = -1;
     }
 
+    /**
+     * Vrací informaci, zda právě probíhá nějaký dialog
+     * @return true pokud je aktivní dialog, jinak false
+     */
     public boolean getIsDialogueAktivni() {
         return isDialogueAktivni;
     }
 
+    /**
+     * Vrací další řádek dialogu aktuální postavy
+     * Pokud dialog skončí, zobrazí zprávu a deaktivuje dialog
+     * @return formátovaný text dalšího dialogového řádku nebo konečnou zprávu
+     */
     public String dalsiRadek() {
         radek++;
         String dialog = mluviciPostava.getNextDialog(radek);
 
         if (dialog == null) {
             ZastavitDialog();
-            return "Rozhovor s postavou skončil.";
+            mluviciPostava.setPromluvilSPostavou(true);
+            return "Rozhovor s postavou skončil. " +  Barvy.ITALIC + "(nyní se můžeš znovu hýbat)" + Barvy.RESET;
         }
-    
-        return dialog;
+
+        return "[" + mluviciPostava.getNazev() +  "]: " + dialog + Barvy.ITALIC +  " (pouzij prikaz dalsi)" + Barvy.RESET;
     }
 
+    /**
+     * Ukončí aktuální dialog
+     */
     private void ZastavitDialog(){
         isDialogueAktivni = false;
     }
 }
+

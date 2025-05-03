@@ -60,8 +60,7 @@ Akce: Použij prut → získej rybu → dones do Oravy.
 | mluv <postava>    ✅   | Zahájí rozhovor s postavou v místnosti.                         | mluv dřevorubec         |
 | dalsi            ✅    | Posune se na další větu v rozhovoru.                            | dalsi                   |
 | dej <věc> <postava> | Předá předmět postavě (např. dáš rybu dřevorubci).              | dej ryba dřevorubec     |
-| prozkoumej <objekt> | Prozkoumá objekt v lokaci (např. truhlu, pařez, jezero).        | prozkoumej parez        |
-| odemkni        | Ve Spišském hradě – použije 3 klíče a ukončí hru vítězstvím.    | odemkni branu           |
+| odemkni    ✅      | Ve Spišském hradě – použije 3 klíče a ukončí hru vítězstvím.    | odemkni branu           |
 
 
 ## Závěr hry
