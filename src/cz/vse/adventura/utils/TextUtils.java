@@ -2,7 +2,7 @@ package cz.vse.adventura.utils;
 
 import cz.vse.adventura.logika.Prostor;
 import cz.vse.adventura.logika.Vec;
-import cz.vse.adventura.logika.dialog.Postava;
+import cz.vse.adventura.logika.Postava;
 
 import java.util.Collection;
 import java.util.StringJoiner;

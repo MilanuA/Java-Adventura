@@ -1,5 +1,4 @@
 package cz.vse.adventura.json;
-import cz.vse.adventura.logika.dialog.Postava;
 import java.util.List;
 
 public class ProstorDTO {

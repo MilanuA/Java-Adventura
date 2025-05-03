@@ -1,9 +1,11 @@
 package cz.vse.adventura.logika;
 
+import cz.vse.adventura.logika.dialogue.DialogueManager;
 import cz.vse.adventura.logika.prikazy.*;
 import cz.vse.adventura.utils.Barvy;
 
 import java.io.IOException;
+import java.util.Objects;
 import java.util.Set;
 
 /**
@@ -43,11 +45,14 @@ public class Hra implements IHra {
         }
 
         platnePrikazy = new SeznamPrikazu();
+
         platnePrikazy.vlozPrikaz(new PrikazNapoveda(platnePrikazy));
         platnePrikazy.vlozPrikaz(new PrikazJdi(herniPlan));
         platnePrikazy.vlozPrikaz(new PrikazKonec(this));
         platnePrikazy.vlozPrikaz(new PrikazSeber(herniPlan));
         platnePrikazy.vlozPrikaz(new PrikazZkontrolujKlice(herniPlan));
+        platnePrikazy.vlozPrikaz(new PrikazMluv(herniPlan));
+        platnePrikazy.vlozPrikaz(new PrikazDalsi());
     }
 
     /**
@@ -96,13 +101,23 @@ public class Hra implements IHra {
            	parametry[i]= slova[i+1];  	
         }
         String textKVypsani=" .... ";
-        if (platnePrikazy.jePlatnyPrikaz(slovoPrikazu)) {
-            IPrikaz prikaz = platnePrikazy.vratPrikaz(slovoPrikazu);
-            textKVypsani = prikaz.provedPrikaz(parametry);
+
+         if (platnePrikazy.jePlatnyPrikaz(slovoPrikazu))
+         {
+             DialogueManager dialogManager = DialogueManager.getInstance();
+
+             if (dialogManager.getIsDialogueAktivni() && !Objects.equals(slovoPrikazu, "dalsi")) {
+                 return "Je třeba pokračovat v dialogu. Nelze jej přerušit.";
+             }
+
+             IPrikaz prikaz = platnePrikazy.vratPrikaz(slovoPrikazu);
+             textKVypsani = prikaz.provedPrikaz(parametry);
+         }
+        else
+        {
+            textKVypsani="Nevím, co tím myslíš? Tento příkaz neznám. ";
         }
-        else {
-            textKVypsani="Nevím co tím myslíš? Tento příkaz neznám. ";
-        }
+
         return textKVypsani;
     }
     

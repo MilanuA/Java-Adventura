@@ -2,7 +2,6 @@ package cz.vse.adventura.logika;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import cz.vse.adventura.logika.dialog.Postava;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -27,7 +26,7 @@ public class Prostor {
 
     private Set<Prostor> vychody = new HashSet<>();// obsahuje sousední místnosti
     private Map<String, Vec> veci;
-    private Set<Postava> postavy = new HashSet<>();
+    private Map<String, Postava> postavy;
 
     @JsonCreator
     public Prostor() {
@@ -44,8 +43,10 @@ public class Prostor {
     public Prostor(String nazev, String popis) {
         this.nazev = nazev;
         this.popis = popis;
+
         vychody = new HashSet<>();
         veci = new HashMap<>();
+        postavy = new HashMap();
     }
 
     public Vec pridejVec(Vec v)
@@ -175,7 +176,7 @@ public class Prostor {
 
         vracenyText.append("\n").append(popisElementu("Věci", veci.values()));
 
-        vracenyText.append("\n").append(popisElementu("Postavy", postavy));
+        vracenyText.append("\n").append(popisElementu("Postavy", postavy.values()));
 
         return vracenyText.toString();
     }
@@ -222,6 +223,10 @@ public class Prostor {
 
     public void pridejPostavu(Postava postava)
     {
-        postavy.add(postava);
+        postavy.put(postava.getNazev(),postava);
+    }
+
+    public Postava getPostavu(String postava){
+        return postavy.get(postava);
     }
 }

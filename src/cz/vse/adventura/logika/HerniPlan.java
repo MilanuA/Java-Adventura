@@ -6,7 +6,6 @@ import java.util.Map;
 import java.util.HashMap;
 import cz.vse.adventura.json.JsonLoader;
 import cz.vse.adventura.json.ProstorDTO;
-import cz.vse.adventura.logika.dialog.Postava;
 
 
 /**
@@ -46,7 +45,6 @@ public class HerniPlan {
 
         List<Postava> postavyList = JsonLoader.nactiPostavy(postavy);
         Map<String, Postava> postavyMapa = new HashMap<>();
-
         for (Postava postava : postavyList) {
             postavyMapa.put(postava.getNazev(), postava);
         }
@@ -54,7 +52,6 @@ public class HerniPlan {
         List<ProstorDTO> prostoryDTO = JsonLoader.nactiProstoryDTO(prostory);
 
         prostoryMapa = new HashMap<>();
-
         for (ProstorDTO dto : prostoryDTO) {
             Prostor p = new Prostor(dto.nazev, dto.popis);
             prostoryMapa.put(dto.nazev, p);
@@ -62,6 +59,7 @@ public class HerniPlan {
 
         for (ProstorDTO dto : prostoryDTO) {
             Prostor p = prostoryMapa.get(dto.nazev);
+
             if (dto.veci != null) {
                 for (String vecNazev : dto.veci) {
                     Vec vec = veciMapa.get(vecNazev);
@@ -70,10 +68,7 @@ public class HerniPlan {
                     }
                 }
             }
-        }
 
-        for (ProstorDTO dto : prostoryDTO) {
-            Prostor p = prostoryMapa.get(dto.nazev);
             if (dto.vychody != null) {
                 for (String vychodNazev : dto.vychody) {
                     Prostor vychod = prostoryMapa.get(vychodNazev);
@@ -82,13 +77,9 @@ public class HerniPlan {
                     }
                 }
             }
-        }
 
-        for (ProstorDTO dto : prostoryDTO) {
-            Prostor p = prostoryMapa.get(dto.nazev);
             if (dto.postavy != null) {
-                for (String postavaNazev : dto.postavy)
-                {
+                for (String postavaNazev : dto.postavy) {
                     Postava postava = postavyMapa.get(postavaNazev);
                     if (postava != null) {
                         p.pridejPostavu(postava);
@@ -96,8 +87,10 @@ public class HerniPlan {
                 }
             }
         }
+
         aktualniProstor = prostoryMapa.get("zřícenina");
     }
+
 
     /**
      *  Metoda vrací odkaz na aktuální prostor, ve ktetém se hráč právě nachází.

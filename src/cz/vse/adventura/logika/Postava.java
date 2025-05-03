@@ -1,4 +1,4 @@
-package cz.vse.adventura.logika.dialog;
+package cz.vse.adventura.logika;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
