@@ -35,11 +35,7 @@ public class Hra implements IHra {
 
         batoh = new Batoh(maximalniHmotnost);
 
-        try {
-            herniPlan = new HerniPlan(batoh);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        herniPlan = new HerniPlan(batoh);
 
         platnePrikazy = new SeznamPrikazu();
 

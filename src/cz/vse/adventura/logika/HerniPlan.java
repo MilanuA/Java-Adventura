@@ -32,65 +32,71 @@ public class HerniPlan {
      * Konstruktor který vytváří jednotlivé prostory a propojuje je pomocí východů.
      * Jako výchozí aktuální prostor nastaví halu.
      */
-    public HerniPlan(Batoh batoh) throws IOException {
+    public HerniPlan(Batoh batoh) {
         this.batoh = batoh;
 
         zalozProstoryHry("src/cz/vse/adventura/json/veci.json",
                 "src/cz/vse/adventura/json/prostory.json",
-                "src/cz/vse/adventura/json/postavy.json" );
+                "src/cz/vse/adventura/json/postavy.json");
     }
 
+    private void zalozProstoryHry(String veci, String prostory, String postavy) {
+        try {
+            dostupneVeci = JsonLoader.nactiVeciDoMapy(veci);
 
-    private void zalozProstoryHry(String veci, String prostory, String postavy) throws IOException {
-        dostupneVeci = JsonLoader.nactiVeciDoMapy(veci);
+            List<Postava> postavyList = JsonLoader.nactiPostavy(postavy);
+            Map<String, Postava> postavyMapa = new HashMap<>();
+            for (Postava postava : postavyList) {
+                postavyMapa.put(postava.getNazev(), postava);
+            }
 
-        List<Postava> postavyList = JsonLoader.nactiPostavy(postavy);
-        Map<String, Postava> postavyMapa = new HashMap<>();
-        for (Postava postava : postavyList) {
-            postavyMapa.put(postava.getNazev(), postava);
-        }
+            List<ProstorDTO> prostoryDTO = JsonLoader.nactiProstoryDTO(prostory);
+            prostoryMapa = new HashMap<>();
+            for (ProstorDTO dto : prostoryDTO) {
+                Prostor p = new Prostor(dto.nazev(), dto.popis());
+                prostoryMapa.put(dto.nazev(), p);
+            }
 
-        List<ProstorDTO> prostoryDTO = JsonLoader.nactiProstoryDTO(prostory);
+            for (ProstorDTO dto : prostoryDTO) {
+                Prostor p = prostoryMapa.get(dto.nazev());
 
-        prostoryMapa = new HashMap<>();
-        for (ProstorDTO dto : prostoryDTO) {
-            Prostor p = new Prostor(dto.nazev(), dto.popis());
-            prostoryMapa.put(dto.nazev(), p);
-        }
+                if (dto.veci() != null) {
+                    for (String vecNazev : dto.veci()) {
+                        Vec vec = dostupneVeci.get(vecNazev);
+                        if (vec != null) {
+                            p.pridejVec(vec);
+                        }
+                    }
+                }
 
-        for (ProstorDTO dto : prostoryDTO) {
-            Prostor p = prostoryMapa.get(dto.nazev());
+                if (dto.vychody() != null) {
+                    for (String vychodNazev : dto.vychody()) {
+                        Prostor vychod = prostoryMapa.get(vychodNazev);
+                        if (vychod != null) {
+                            p.setVychod(vychod);
+                        }
+                    }
+                }
 
-            if (dto.veci() != null) {
-                for (String vecNazev : dto.veci()) {
-                    Vec vec = dostupneVeci.get(vecNazev);
-                    if (vec != null) {
-                        p.pridejVec(vec);
+                if (dto.postavy() != null) {
+                    for (String postavaNazev : dto.postavy()) {
+                        Postava postava = postavyMapa.get(postavaNazev);
+                        if (postava != null) {
+                            p.pridejPostavu(postava);
+                        }
                     }
                 }
             }
 
-            if (dto.vychody() != null) {
-                for (String vychodNazev : dto.vychody()) {
-                    Prostor vychod = prostoryMapa.get(vychodNazev);
-                    if (vychod != null) {
-                        p.setVychod(vychod);
-                    }
-                }
-            }
+            aktualniProstor = prostoryMapa.get("zřícenina");
 
-            if (dto.postavy() != null) {
-                for (String postavaNazev : dto.postavy()) {
-                    Postava postava = postavyMapa.get(postavaNazev);
-                    if (postava != null) {
-                        p.pridejPostavu(postava);
-                    }
-                }
-            }
+        } catch (IOException e) {
+            System.err.println("Chyba při načítání souborů: " + e.getMessage());
+        } catch (Exception e) {
+            System.err.println("Došlo k chybě při zakládání prostorů hry: " + e.getMessage());
         }
-
-        aktualniProstor = prostoryMapa.get("zřícenina");
     }
+
 
 
     /**
