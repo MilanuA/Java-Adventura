@@ -1,7 +1,6 @@
 package cz.vse.adventura.logika.prikazy;
 import cz.vse.adventura.logika.Batoh;
 import cz.vse.adventura.logika.HerniPlan;
-import cz.vse.adventura.logika.Vec;
 
 import java.util.ArrayList;
 import java.util.List;

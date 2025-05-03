@@ -1,5 +1,7 @@
 package cz.vse.adventura.logika;
 
+import cz.vse.adventura.logika.veci.Vec;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;

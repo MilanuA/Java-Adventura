@@ -2,6 +2,7 @@ package cz.vse.adventura.logika;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import cz.vse.adventura.logika.veci.Vec;
 
 import java.util.*;
 import java.util.stream.Collectors;

@@ -6,6 +6,7 @@ import java.util.Map;
 import java.util.HashMap;
 import cz.vse.adventura.json.JsonLoader;
 import cz.vse.adventura.json.ProstorDTO;
+import cz.vse.adventura.logika.veci.Vec;
 
 
 /**
@@ -53,15 +54,15 @@ public class HerniPlan {
 
         prostoryMapa = new HashMap<>();
         for (ProstorDTO dto : prostoryDTO) {
-            Prostor p = new Prostor(dto.nazev, dto.popis);
-            prostoryMapa.put(dto.nazev, p);
+            Prostor p = new Prostor(dto.nazev(), dto.popis());
+            prostoryMapa.put(dto.nazev(), p);
         }
 
         for (ProstorDTO dto : prostoryDTO) {
-            Prostor p = prostoryMapa.get(dto.nazev);
+            Prostor p = prostoryMapa.get(dto.nazev());
 
-            if (dto.veci != null) {
-                for (String vecNazev : dto.veci) {
+            if (dto.veci() != null) {
+                for (String vecNazev : dto.veci()) {
                     Vec vec = dostupneVeci.get(vecNazev);
                     if (vec != null) {
                         p.pridejVec(vec);
@@ -69,8 +70,8 @@ public class HerniPlan {
                 }
             }
 
-            if (dto.vychody != null) {
-                for (String vychodNazev : dto.vychody) {
+            if (dto.vychody() != null) {
+                for (String vychodNazev : dto.vychody()) {
                     Prostor vychod = prostoryMapa.get(vychodNazev);
                     if (vychod != null) {
                         p.setVychod(vychod);
@@ -78,8 +79,8 @@ public class HerniPlan {
                 }
             }
 
-            if (dto.postavy != null) {
-                for (String postavaNazev : dto.postavy) {
+            if (dto.postavy() != null) {
+                for (String postavaNazev : dto.postavy()) {
                     Postava postava = postavyMapa.get(postavaNazev);
                     if (postava != null) {
                         p.pridejPostavu(postava);

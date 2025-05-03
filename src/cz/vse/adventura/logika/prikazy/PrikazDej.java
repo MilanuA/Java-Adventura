@@ -1,6 +1,6 @@
 package cz.vse.adventura.logika.prikazy;
 import cz.vse.adventura.logika.*;
-import cz.vse.adventura.logika.dialogue.DialogueManager;
+import cz.vse.adventura.logika.veci.Vec;
 
 public class PrikazDej implements IPrikaz {
     private static final String NAZEV = "dej";
