@@ -1,5 +1,4 @@
 package cz.vse.adventura.logika.prikazy;
-
 import cz.vse.adventura.logika.SeznamPrikazu;
 
 /**
@@ -35,9 +34,7 @@ public class PrikazNapoveda implements IPrikaz {
      */
     @Override
     public String provedPrikaz(String... parametry) {
-        return "Tvým úkolem je dovést Červenou Karkulku z domečku\n"
-        + "až k babičce, která bydlí v chaloupce za lesem.\n"
-        + "\n"
+        return "Tvým úkolem je najít tři klíče a odemknout bránu.\n"
         + "Můžeš zadat tyto příkazy:\n"
         + platnePrikazy.vratNazvyPrikazu();
     }

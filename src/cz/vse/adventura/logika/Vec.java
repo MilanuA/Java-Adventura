@@ -1,5 +1,8 @@
 package cz.vse.adventura.logika;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Vec
 {
     private String nazev;
@@ -16,10 +19,12 @@ public class Vec
             this.hmotnost = null;
     }
 
-
-    public Vec(String nazev, boolean prenositelna, Integer hmotnost) {
-        this.prenositelna = prenositelna;
+    @JsonCreator
+    public Vec(@JsonProperty("nazev") String nazev,
+               @JsonProperty("prenositelna") boolean prenositelna,
+               @JsonProperty("hmotnost") Integer hmotnost) {
         this.nazev = nazev;
+        this.prenositelna = prenositelna;
         this.hmotnost = hmotnost;
     }
 

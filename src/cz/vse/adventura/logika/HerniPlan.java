@@ -1,5 +1,13 @@
 package cz.vse.adventura.logika;
 
+import java.io.IOException;
+import java.util.List;
+import java.util.Map;
+import java.util.HashMap;
+import cz.vse.adventura.json.JsonLoader;
+import cz.vse.adventura.json.ProstorDTO;
+
+
 /**
  *  Class HerniPlan - třída představující mapu a stav adventury.
  * 
@@ -15,46 +23,65 @@ public class HerniPlan {
     
     private Prostor aktualniProstor;
     private Batoh batoh;
-     /**
-     *  Konstruktor který vytváří jednotlivé prostory a propojuje je pomocí východů.
-     *  Jako výchozí aktuální prostor nastaví halu.
+
+    private Map<String, Prostor> prostoryMapa;
+    private Map<String, Vec> veciMapa;
+
+    /**
+     * Konstruktor který vytváří jednotlivé prostory a propojuje je pomocí východů.
+     * Jako výchozí aktuální prostor nastaví halu.
      */
-    public HerniPlan(Batoh batoh) {
-        zalozProstoryHry();
+    public HerniPlan(Batoh batoh) throws IOException {
         this.batoh = batoh;
+
+        zalozProstoryHry("src/cz/vse/adventura/json/veci.json", "src/cz/vse/adventura/json/prostory.json");
     }
 
     /**
-     *  Vytváří jednotlivé prostory a propojuje je pomocí východů.
-     *  Jako výchozí aktuální prostor nastaví domeček.
+     * Načte prostory a věci z JSON souborů a propojí je.
+     *
+     * @param veciPath cesta k souboru s JSON daty o věcech.
+     * @param prostoryPath cesta k souboru s JSON daty o prostorech.
      */
-    private void zalozProstoryHry() {
-        // vytvářejí se jednotlivé prostory
-        Prostor domecek = new Prostor("domeček","domeček, ve kterém bydlí Karkulka");
-        Prostor chaloupka = new Prostor("chaloupka", "chaloupka, ve které bydlí babička Karkulky");
-        Prostor jeskyne = new Prostor("jeskyně","stará plesnivá jeskyně");
-        Prostor les = new Prostor("les","les s jahodami, malinami a pramenem vody");
-        Prostor hlubokyLes = new Prostor("hluboký_les","temný les, ve kterém lze potkat vlka");
+    private void zalozProstoryHry(String veciPath, String prostoryPath) throws IOException {
+        veciMapa = JsonLoader.nactiVeciDoMapy(veciPath);
 
-        Vec vino = new Vec("pomoc", true, 10);
-        Vec socha = new Vec("pomoc", false);
+        List<ProstorDTO> prostoryDTO = JsonLoader.nactiProstoryDTO(prostoryPath);
+        prostoryMapa = new HashMap<>();
 
-        domecek.pridejVec(vino);
-        chaloupka.pridejVec(socha);
+        for (ProstorDTO dto : prostoryDTO) {
+            Prostor p = new Prostor(dto.nazev, dto.popis);
+            prostoryMapa.put(dto.nazev, p);
+        }
 
-        // přiřazují se průchody mezi prostory (sousedící prostory)
-        domecek.setVychod(les);
-        les.setVychod(domecek);
-        les.setVychod(hlubokyLes);
-        hlubokyLes.setVychod(les);
-        hlubokyLes.setVychod(jeskyne);
-        hlubokyLes.setVychod(chaloupka);
-        jeskyne.setVychod(hlubokyLes);
-        chaloupka.setVychod(hlubokyLes);
-                
-        aktualniProstor = domecek;  // hra začíná v domečku       
+        for (ProstorDTO dto : prostoryDTO) {
+            Prostor p = prostoryMapa.get(dto.nazev);
+            if (dto.veci != null) {
+                for (String vecNazev : dto.veci) {
+                    Vec vec = veciMapa.get(vecNazev);
+                    if (vec != null) {
+                        p.pridejVec(vec);
+                    }
+                }
+            }
+        }
+
+        for (ProstorDTO dto : prostoryDTO) {
+            Prostor p = prostoryMapa.get(dto.nazev);
+            if (dto.vychody != null) {
+                for (String vychodNazev : dto.vychody) {
+                    Prostor vychod = prostoryMapa.get(vychodNazev);
+                    if (vychod != null) {
+                        p.setVychod(vychod);
+                    }
+                }
+            }
+        }
+
+
+        aktualniProstor = prostoryMapa.get("zřícenina");
     }
-    
+
     /**
      *  Metoda vrací odkaz na aktuální prostor, ve ktetém se hráč právě nachází.
      *

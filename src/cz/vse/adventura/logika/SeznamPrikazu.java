@@ -1,6 +1,7 @@
 package cz.vse.adventura.logika;
 
 import cz.vse.adventura.logika.prikazy.IPrikaz;
+import cz.vse.adventura.utils.Barvy;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -66,12 +67,15 @@ public class SeznamPrikazu {
      *  @return     Řetězec, který obsahuje seznam přípustných příkazů
      */
     public String vratNazvyPrikazu() {
-        String seznam = "";
-        for (String slovoPrikazu : mapaSPrikazy.keySet()){
-            seznam += slovoPrikazu + " ";
+        StringBuilder seznam = new StringBuilder();
+
+        for (String slovoPrikazu : mapaSPrikazy.keySet()) {
+            seznam.append("- ").append(slovoPrikazu).append("\n");
         }
-        return seznam;
+        return seznam.toString();
     }
+
+
     
 }
 

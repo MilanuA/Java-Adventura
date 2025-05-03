@@ -1,0 +1,57 @@
+[
+  {
+    "nazev": "sekera",
+    "prenositelna": true,
+    "hmotnost": 2
+  },
+  {
+    "nazev": "zrcadlo",
+    "prenositelna": true,
+    "hmotnost": 1
+  },
+  {
+    "nazev": "mapa Slovenska",
+    "prenositelna": true,
+    "hmotnost": 1
+  },
+  {
+    "nazev": "stříbrný prsten",
+    "prenositelna": true,
+    "hmotnost": 1
+  },
+  {
+    "nazev": "páčidlo",
+    "prenositelna": true,
+    "hmotnost": 3
+  },
+  {
+    "nazev": "jablko",
+    "prenositelna": true,
+    "hmotnost": 1
+  },
+  {
+    "nazev": "rybářský prut",
+    "prenositelna": true,
+    "hmotnost": 2
+  },
+  {
+    "nazev": "ryba",
+    "prenositelna": true,
+    "hmotnost": 2
+  },
+  {
+    "nazev": "dřevěný klíč",
+    "prenositelna": true,
+    "hmotnost": 1
+  },
+  {
+    "nazev": "ledový klíč",
+    "prenositelna": true,
+    "hmotnost": 1
+  },
+  {
+    "nazev": "zlatý klíč",
+    "prenositelna": true,
+    "hmotnost": 1
+  }
+]

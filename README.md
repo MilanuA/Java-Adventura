@@ -1,10 +1,12 @@
 # Tajemství Spišského pokladu
 
+```
                 [Tatry]
                    |
              [Zřícenina] - [Košice] - [Dunaj]
                    |
   [Orava] - [Spišský hrad] - [Bratislava]
+```
 
 
 ## Průběh hry:

@@ -1,7 +1,9 @@
 package cz.vse.adventura.logika;
 
 import cz.vse.adventura.logika.prikazy.*;
+import cz.vse.adventura.utils.Barvy;
 
+import java.io.IOException;
 import java.util.Set;
 
 /**
@@ -34,7 +36,11 @@ public class Hra implements IHra {
         int maximalniHmotnost = 3;
         batoh = new Batoh(maximalniHmotnost, vychoziVeci);
 
-        herniPlan = new HerniPlan(batoh);
+        try {
+            herniPlan = new HerniPlan(batoh);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
         platnePrikazy = new SeznamPrikazu();
         platnePrikazy.vlozPrikaz(new PrikazNapoveda(platnePrikazy));
@@ -47,12 +53,17 @@ public class Hra implements IHra {
      *  Vrátí úvodní zprávu pro hráče.
      */
     public String vratUvitani() {
-        return "Vítejte!\n" +
-               "Toto je příběh o Červené Karkulce, babičce a vlkovi.\n" +
-               "Napište 'nápověda', pokud si nevíte rady, jak hrát dál.\n" +
-               "\n" +
-               herniPlan.getAktualniProstor().dlouhyPopis();
+        String oddelovac = Barvy.BOLD + Barvy.YELLOW + "--------------------------" + Barvy.RESET;
+        return oddelovac + "\n" +
+                Barvy.BOLD + Barvy.YELLOW +
+                "Vítejte!\n" +
+                "Toto je příběh o Tajemství Spišsského pokladu.\n" +
+                "Napište 'nápověda', pokud si nevíte rady, jak hrát dál.\n" +
+                Barvy.RESET + "\n" +
+                oddelovac + "\n\n" +
+                herniPlan.getAktualniProstor().dlouhyPopis();
     }
+
     
     /**
      *  Vrátí závěrečnou zprávu pro hráče.
