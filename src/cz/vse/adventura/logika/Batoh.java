@@ -17,6 +17,7 @@ public class Batoh
 
     public Batoh(int maxHmotnost){
         this.maxHmotnost = maxHmotnost;
+        this.veci = new HashMap<>();
     }
 
     public Batoh(Map<String, Vec> veci){
@@ -40,7 +41,7 @@ public class Batoh
         if(!vejdeSe(v))
             throw new IllegalStateException("Věc " + nazev + " se do batohu nevejde");
 
-        if(!veci.containsKey(nazev))
+        if(veci.containsKey(nazev))
             throw new IllegalStateException("Věc " + nazev + " je již v batohu přítomna");
 
         if(!v.isPrenositelna())

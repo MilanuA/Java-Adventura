@@ -3,7 +3,7 @@
     "nazev": "zřícenina",
     "popis": "Zbytky staré tvrze. Nachází se tu truhla a poutník.",
     "vychody": ["tatry", "košice", "hrad"],
-    "veci": ["páčidlo", "stříbrný prsten", "mapa Slovenska"],
+    "veci": [],
     "postavy" : ["poutník"]
   },
   {
@@ -38,7 +38,7 @@
     "nazev": "košice",
     "popis": "Městský trh, ve kterém se nachází kupkyně, se kterou si můžeš promluvit.",
     "vychody": ["zřícenina"],
-    "veci": ["zrcadlo"],
+    "veci": [],
     "postavy" : ["kupkyně"]
   },
   {

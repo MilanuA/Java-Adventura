@@ -70,14 +70,15 @@ public class Prostor {
     }
 
     public Vec odeberVec(String nazev){
+        Vec v = getVec(nazev);
 
-        if(!veci.containsKey(nazev))
-            throw new IllegalStateException("Věc "+ nazev + " se v protoru nenachází");
+        if (v == null)
+            throw new IllegalStateException("Věc '" + nazev + "' se v prostoru nenachází.");
 
         veci.remove(nazev);
-        Vec v = getVec(nazev);
         return v;
     }
+
 
     /**
      * Definuje východ z prostoru (sousední/vedlejsi prostor). Vzhledem k tomu,

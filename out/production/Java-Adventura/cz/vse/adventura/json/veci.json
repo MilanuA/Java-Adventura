@@ -2,7 +2,7 @@
   {
     "nazev": "sekera",
     "prenositelna": true,
-    "hmotnost": 2
+    "hmotnost": 3
   },
   {
     "nazev": "zrcadlo",
@@ -10,18 +10,18 @@
     "hmotnost": 1
   },
   {
-    "nazev": "mapa Slovenska",
+    "nazev": "mapa",
     "prenositelna": true,
     "hmotnost": 1
   },
   {
-    "nazev": "stříbrný prsten",
+    "nazev": "prsten",
     "prenositelna": true,
     "hmotnost": 1
   },
   {
     "nazev": "páčidlo",
-    "prenositelna": false,
+    "prenositelna": true,
     "hmotnost": 3
   },
   {
@@ -31,7 +31,7 @@
   },
   {
     "nazev": "rybářský prut",
-    "prenositelna": false,
+    "prenositelna": true,
     "hmotnost": 2
   },
   {

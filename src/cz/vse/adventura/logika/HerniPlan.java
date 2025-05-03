@@ -25,7 +25,7 @@ public class HerniPlan {
     private Batoh batoh;
 
     private Map<String, Prostor> prostoryMapa;
-    private Map<String, Vec> veciMapa;
+    private Map<String, Vec> dostupneVeci;
 
     /**
      * Konstruktor který vytváří jednotlivé prostory a propojuje je pomocí východů.
@@ -41,7 +41,7 @@ public class HerniPlan {
 
 
     private void zalozProstoryHry(String veci, String prostory, String postavy) throws IOException {
-        veciMapa = JsonLoader.nactiVeciDoMapy(veci);
+        dostupneVeci = JsonLoader.nactiVeciDoMapy(veci);
 
         List<Postava> postavyList = JsonLoader.nactiPostavy(postavy);
         Map<String, Postava> postavyMapa = new HashMap<>();
@@ -62,7 +62,7 @@ public class HerniPlan {
 
             if (dto.veci != null) {
                 for (String vecNazev : dto.veci) {
-                    Vec vec = veciMapa.get(vecNazev);
+                    Vec vec = dostupneVeci.get(vecNazev);
                     if (vec != null) {
                         p.pridejVec(vec);
                     }
@@ -111,6 +111,10 @@ public class HerniPlan {
        aktualniProstor = prostor;
     }
 
+    public Map<String, Vec> getDostupneVeci() {
+        return dostupneVeci;
+    }
+
     public Vec seberVec(String nazev){
         Vec vec = getAktualniProstor().getVec(nazev);
 
@@ -118,13 +122,6 @@ public class HerniPlan {
         aktualniProstor.odeberVec(nazev);
 
         return vec;
-    }
-
-    public void pridejVec(String nazev){
-        Vec v = batoh.getVec(nazev);
-        batoh.odeberVec(v);
-
-        aktualniProstor.pridejVec(v);
     }
 
     public Batoh getBatoh()

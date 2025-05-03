@@ -20,7 +20,9 @@
     "pokracovaniDialogu": [
       "Rybu z Dunaje už máš? Bez ní sekera zůstává u mě.",
       "Dřevo se samo neporazí. Vrať se, až něco přineseš."
-    ]
+    ],
+    "pozadovanaVec": "ryba",
+    "odmena": "sekera"
   },
   {
     "nazev": "správce muzea",
@@ -31,7 +33,9 @@
     "pokracovaniDialogu": [
       "Znovu vás vítám. Už máte tu mapu?",
       "Bez mapy vás k trezoru nepustím. Historie má svá pravidla."
-    ]
+    ],
+    "pozadovanaVec": "mapa Slovenska",
+    "odmena": "zlatý klíč"
   },
   {
     "nazev": "kupkyně",
@@ -42,7 +46,9 @@
     "pokracovaniDialogu": [
       "Máš ten stříbrný prsten? Bez něj obchod neuzavřeme.",
       "Zrcadlo čeká... Ale ne pro prázdné ruce."
-    ]
+    ],
+    "pozadovanaVec": "stříbrný prsten",
+    "odmena": "zrcadlo"
   },
   {
     "nazev": "poutník",
@@ -54,6 +60,8 @@
     "pokracovaniDialogu": [
       "Jablko z Bratislavy! Nezapomeň, jen s ním dostaneš páčidlo.",
       "Nebudu čekat věčně. Buď přines jablko, nebo odejdi."
-    ]
+    ],
+    "pozadovanaVec": "jablko",
+    "odmena": "páčidlo"
   }
 ]

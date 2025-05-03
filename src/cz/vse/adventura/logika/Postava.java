@@ -9,6 +9,8 @@ public class Postava {
     private String nazev;
     private List<String> dialog;
     private List<String> pokracovaniDialogu;
+    private String pozadovanaVec;
+    private String odmena;
 
     private boolean promluvilSPostavou;
 
@@ -16,10 +18,14 @@ public class Postava {
     public Postava(
             @JsonProperty("nazev") String nazev,
             @JsonProperty("dialog") List<String> dialog,
-            @JsonProperty("pokracovaniDialogu") List<String> pokracovaniDialogu) {
+            @JsonProperty("pokracovaniDialogu") List<String> pokracovaniDialogu,
+            @JsonProperty("odmena") String odmena,
+            @JsonProperty("pozadovanaVec") String pozadovanaVec) {
         this.nazev = nazev;
         this.dialog = dialog;
         this.pokracovaniDialogu = pokracovaniDialogu;
+        this.odmena = odmena;
+        this.pozadovanaVec = pozadovanaVec;
     }
 
     public String getNazev() {
@@ -48,8 +54,16 @@ public class Postava {
         return null;
     }
 
-
     public void setPromluvilSPostavou(boolean promluvilSPostavou) {
         this.promluvilSPostavou = promluvilSPostavou;
+    }
+
+
+    public String getPozadovanaVec() {
+        return pozadovanaVec;
+    }
+
+    public String getOdmena() {
+        return odmena;
     }
 }
