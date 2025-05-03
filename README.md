@@ -49,22 +49,19 @@ Předmět: Rybářský prut (leží na břehu, volně k sebrání).
 Akce: Použij prut → získej rybu → dones do Oravy.
 
 ## Předměty a využití:
-| Příkaz                              | Popis                                                           | Příklad použití         |
-|-------------------------------------|-----------------------------------------------------------------|-------------------------|
-| jdi <místo>       ✅                  | Přesun do jiné lokace, pokud cesta existuje.                    | jdi orava               |
-| napoveda     ✅                       | Vypíše seznam dostupných příkazů.                               | napoveda                |
-| zkontroluj       ✅                   | Zkontroluje, zda má hráč všechny 3 klíče.                       | zkontroluj              |
-| konec          ✅                     | Ukončí hru.                                                     | konec                   |
-| seber <věc>       ✅                  | Vezme předmět z aktuální místnosti.                             | seber prut              |
-| pouzij <věc>                        | Použije konkrétní předmět (např. sekera, mapa, zrcadlo, prut…). | pouzij zrcadlo          |
-| vymen <mujPredmet> za <jinyPredmet> | Provede výměnu předmětů s NPC.                                  | vymen prsten za zrcadlo |
-| mluv <postava>                      | Zahájí rozhovor s postavou v místnosti.                         | mluv dřevorubec         |
-| dalsi                               | Posune se na další větu v rozhovoru.                            | dalsi                   |
-| dej <věc> <postava>                 | Předá předmět postavě (např. dáš rybu dřevorubci).              | dej ryba dřevorubec     |
-| prozkoumej <objekt>                 | Prozkoumá objekt v lokaci (např. truhlu, pařez, jezero).        | prozkoumej parez        |
-| chytej / pouzij prut                | Speciální akce pro chytání ryby u Dunaje.                       | chytej nebo pouzij prut |
-| rozsekej pařez                      | Použije sekeru na pařez v Oravě → získání dřevěného klíče.      | rozsekej pařez          |
-| odemkni branu                       | Ve Spišském hradě – použije 3 klíče a ukončí hru vítězstvím.    | odemkni branu           |
+| Příkaz               | Popis                                                           | Příklad použití         |
+|----------------------|-----------------------------------------------------------------|-------------------------|
+| jdi <místo>       ✅  | Přesun do jiné lokace, pokud cesta existuje.                    | jdi orava               |
+| napoveda     ✅       | Vypíše seznam dostupných příkazů.                               | napoveda                |
+| zkontroluj       ✅   | Zkontroluje, zda má hráč všechny 3 klíče.                       | zkontroluj              |
+| konec          ✅     | Ukončí hru.                                                     | konec                   |
+| seber <věc>       ✅  | Vezme předmět z aktuální místnosti.                             | seber prut              |
+| pouzij <věc>         | Použije konkrétní předmět (např. sekera, mapa, zrcadlo, prut…). | pouzij zrcadlo          |
+| mluv <postava>       | Zahájí rozhovor s postavou v místnosti.                         | mluv dřevorubec         |
+| dalsi                | Posune se na další větu v rozhovoru.                            | dalsi                   |
+| dej <věc> <postava>  | Předá předmět postavě (např. dáš rybu dřevorubci).              | dej ryba dřevorubec     |
+| prozkoumej <objekt>  | Prozkoumá objekt v lokaci (např. truhlu, pařez, jezero).        | prozkoumej parez        |
+| odemkni branu        | Ve Spišském hradě – použije 3 klíče a ukončí hru vítězstvím.    | odemkni branu           |
 
 
 ## Závěr hry

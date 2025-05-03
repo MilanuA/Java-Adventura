@@ -6,6 +6,7 @@ import java.util.Map;
 import java.util.HashMap;
 import cz.vse.adventura.json.JsonLoader;
 import cz.vse.adventura.json.ProstorDTO;
+import cz.vse.adventura.logika.dialog.Postava;
 
 
 /**
@@ -34,19 +35,24 @@ public class HerniPlan {
     public HerniPlan(Batoh batoh) throws IOException {
         this.batoh = batoh;
 
-        zalozProstoryHry("src/cz/vse/adventura/json/veci.json", "src/cz/vse/adventura/json/prostory.json");
+        zalozProstoryHry("src/cz/vse/adventura/json/veci.json",
+                "src/cz/vse/adventura/json/prostory.json",
+                "src/cz/vse/adventura/json/postavy.json" );
     }
 
-    /**
-     * Načte prostory a věci z JSON souborů a propojí je.
-     *
-     * @param veciPath cesta k souboru s JSON daty o věcech.
-     * @param prostoryPath cesta k souboru s JSON daty o prostorech.
-     */
-    private void zalozProstoryHry(String veciPath, String prostoryPath) throws IOException {
-        veciMapa = JsonLoader.nactiVeciDoMapy(veciPath);
 
-        List<ProstorDTO> prostoryDTO = JsonLoader.nactiProstoryDTO(prostoryPath);
+    private void zalozProstoryHry(String veci, String prostory, String postavy) throws IOException {
+        veciMapa = JsonLoader.nactiVeciDoMapy(veci);
+
+        List<Postava> postavyList = JsonLoader.nactiPostavy(postavy);
+        Map<String, Postava> postavyMapa = new HashMap<>();
+
+        for (Postava postava : postavyList) {
+            postavyMapa.put(postava.getNazev(), postava);
+        }
+
+        List<ProstorDTO> prostoryDTO = JsonLoader.nactiProstoryDTO(prostory);
+
         prostoryMapa = new HashMap<>();
 
         for (ProstorDTO dto : prostoryDTO) {
@@ -78,7 +84,18 @@ public class HerniPlan {
             }
         }
 
-
+        for (ProstorDTO dto : prostoryDTO) {
+            Prostor p = prostoryMapa.get(dto.nazev);
+            if (dto.postavy != null) {
+                for (String postavaNazev : dto.postavy)
+                {
+                    Postava postava = postavyMapa.get(postavaNazev);
+                    if (postava != null) {
+                        p.pridejPostavu(postava);
+                    }
+                }
+            }
+        }
         aktualniProstor = prostoryMapa.get("zřícenina");
     }
 

@@ -2,43 +2,50 @@
   {
     "nazev": "zřícenina",
     "popis": "Zbytky staré tvrze. Nachází se tu truhla a poutník.",
-    "vychody": ["tatry", "košice", "spišský hrad"],
-    "veci": ["páčidlo", "stříbrný prsten", "mapa Slovenska"]
+    "vychody": ["tatry", "košice", "hrad"],
+    "veci": ["páčidlo", "stříbrný prsten", "mapa Slovenska"],
+    "postavy" : ["poutník"]
   },
   {
-    "nazev": "spišský hrad",
+    "nazev": "hrad",
     "popis": "Starobylý hrad s bránou, kterou lze otevřít pouze třemi klíči (ledový, dřevěný a zlatý). Koused od brány sedí duch, se kterým si můžeš promluvit.",
     "vychody": ["orava", "bratislava", "zřícenina"],
-    "veci" : []
+    "veci" : [],
+    "postavy" : ["starý duch Strážce hradu"]
   },
   {
     "nazev": "orava",
     "popis": "Vesnice u lesa. V dáli vidíš podezřelý pařez, ale les je nepropustný. Ve vesnici najdeš dřevorubce, se kterým se dá promluvit.",
-    "vychody": ["spišský hrad"],
-    "veci" : []
+    "vychody": ["hrad"],
+    "veci" : [],
+    "postavy" : ["dřevorubec"]
   },
   {
     "nazev": "tatry",
     "popis": "Zamrzlé jezero s klíčem na dně.",
     "vychody": ["zřícenina"],
-    "veci" : []
+    "veci" : [],
+    "postavy" : []
   },
   {
     "nazev": "bratislava",
     "popis": "Hlavní město, ve kterém se nachází muzeum, jenž má zavřený trezor. Všimneš si správce muzea, se kterým můžeš promluvit.",
-    "vychody": ["spišský hrad"],
-    "veci": ["jablko"]
+    "vychody": ["hrad"],
+    "veci": ["jablko"],
+    "postavy" : ["správce muzea"]
   },
   {
     "nazev": "košice",
     "popis": "Městský trh, ve kterém se nachází kupkyně, se kterou si můžeš promluvit.",
     "vychody": ["zřícenina"],
-    "veci": ["zrcadlo"]
+    "veci": ["zrcadlo"],
+    "postavy" : ["kupkyně"]
   },
   {
     "nazev": "dunaj",
     "popis": "Řeka, kde můžeš rybařit.",
     "vychody": ["košice"],
-    "veci": ["rybářský prut"]
+    "veci": ["rybářský prut"],
+    "postavy" : []
   }
 ]

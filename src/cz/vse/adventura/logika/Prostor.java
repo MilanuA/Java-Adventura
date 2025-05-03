@@ -2,11 +2,12 @@ package cz.vse.adventura.logika;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import cz.vse.adventura.utils.Barvy;
+import cz.vse.adventura.logika.dialog.Postava;
 
 import java.util.*;
 import java.util.stream.Collectors;
+
+import static cz.vse.adventura.utils.TextUtils.popisElementu;
 
 /**
  * Trida Prostor - popisuje jednotlivé prostory (místnosti) hry
@@ -18,7 +19,7 @@ import java.util.stream.Collectors;
  * si prostor ukládá odkaz na sousedící prostor.
  *
  */
-@JsonIgnoreProperties({"vychody", "veci"})
+@JsonIgnoreProperties({"vychody", "veci", "postavy"})
 public class Prostor {
 
     private String nazev;
@@ -26,6 +27,7 @@ public class Prostor {
 
     private Set<Prostor> vychody = new HashSet<>();// obsahuje sousední místnosti
     private Map<String, Vec> veci;
+    private Set<Postava> postavy = new HashSet<>();
 
     @JsonCreator
     public Prostor() {
@@ -161,46 +163,21 @@ public class Prostor {
      * @return Dlouhý popis prostoru
      */
     public String dlouhyPopis() {
-        return "Jsi v prostoru " + popis + ".\n"
-                + popisVychodu() + "\n" + popisVeci();
+        return "Jsi v prostoru " + popis + "\n\n"
+                + popisVseho();
     }
 
-    /**
-     * Vrací textový řetězec, který popisuje sousední východy, například:
-     * "vychody: hala ".
-     *
-     * @return Popis východů - názvů sousedních prostorů
-     */
-    private String popisVychodu() {
-        StringBuilder vracenyText = new StringBuilder(Barvy.BOLD + Barvy.BLUE + "Východy:" + Barvy.RESET + " ");
-        Iterator<Prostor> iterator = vychody.iterator();
 
-        while (iterator.hasNext()) {
-            String nazev = iterator.next().getNazev();
-            if (!nazev.isEmpty()) {
-                nazev = nazev.substring(0, 1).toUpperCase() + nazev.substring(1);
-            }
-            vracenyText.append(nazev);
-            if (iterator.hasNext()) {
-                vracenyText.append(", ");
-            }
-        }
+    private String popisVseho() {
+        StringBuilder vracenyText = new StringBuilder();
+
+        vracenyText.append(popisElementu("Východy", vychody));
+
+        vracenyText.append("\n").append(popisElementu("Věci", veci.values()));
+
+        vracenyText.append("\n").append(popisElementu("Postavy", postavy));
 
         return vracenyText.toString();
-    }
-
-
-    private String popisVeci() {
-        if (veci.isEmpty()) {
-            return Barvy.BOLD + Barvy.BLUE + "Věci:" + Barvy.RESET + " žádné";
-        }
-
-        StringJoiner joiner = new StringJoiner(", ");
-        for (Vec vec : veci.values()) {
-            joiner.add(vec.getNazev());
-        }
-
-        return Barvy.BOLD + Barvy.BLUE + "Věci:" + Barvy.RESET + " " + joiner.toString();
     }
 
 
@@ -241,5 +218,10 @@ public class Prostor {
 
     public Map<String, Vec> getVeci() {
         return veci;
+    }
+
+    public void pridejPostavu(Postava postava)
+    {
+        postavy.add(postava);
     }
 }

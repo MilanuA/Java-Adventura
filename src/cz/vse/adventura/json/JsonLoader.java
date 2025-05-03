@@ -1,8 +1,10 @@
 package cz.vse.adventura.json;
+
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import cz.vse.adventura.logika.Prostor;
 import cz.vse.adventura.logika.Vec;
+import cz.vse.adventura.logika.dialog.Postava;
 
 import java.io.File;
 import java.io.IOException;
@@ -26,8 +28,15 @@ public class JsonLoader {
         return veciMapa;
     }
 
+    public static List<Postava> nactiPostavy(String path) throws IOException {
+        ObjectMapper mapper = new ObjectMapper();
+        // Načítání JSONu jako seznam objektů Postava
+        return mapper.readValue(new File(path), new TypeReference<List<Postava>>() {});
+    }
+
     public static List<ProstorDTO> nactiProstoryDTO(String path) throws IOException {
         ObjectMapper mapper = new ObjectMapper();
         return mapper.readValue(new File(path), new TypeReference<List<ProstorDTO>>() {});
     }
+
 }

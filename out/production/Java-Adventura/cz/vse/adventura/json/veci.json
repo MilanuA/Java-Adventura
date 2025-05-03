@@ -21,7 +21,7 @@
   },
   {
     "nazev": "páčidlo",
-    "prenositelna": true,
+    "prenositelna": false,
     "hmotnost": 3
   },
   {
@@ -31,7 +31,7 @@
   },
   {
     "nazev": "rybářský prut",
-    "prenositelna": true,
+    "prenositelna": false,
     "hmotnost": 2
   },
   {
