@@ -14,15 +14,16 @@ package cz.vse.adventura.logika;
 public class HerniPlan {
     
     private Prostor aktualniProstor;
-    
+    private Batoh batoh;
      /**
      *  Konstruktor který vytváří jednotlivé prostory a propojuje je pomocí východů.
      *  Jako výchozí aktuální prostor nastaví halu.
      */
-    public HerniPlan() {
+    public HerniPlan(Batoh batoh) {
         zalozProstoryHry();
-
+        this.batoh = batoh;
     }
+
     /**
      *  Vytváří jednotlivé prostory a propojuje je pomocí východů.
      *  Jako výchozí aktuální prostor nastaví domeček.
@@ -73,4 +74,24 @@ public class HerniPlan {
        aktualniProstor = prostor;
     }
 
+    public Vec seberVec(String nazev){
+        Vec vec = getAktualniProstor().getVec(nazev);
+
+        batoh.pridejVec(vec);
+        aktualniProstor.odeberVec(nazev);
+
+        return vec;
+    }
+
+    public void pridejVec(String nazev){
+        Vec v = batoh.getVec(nazev);
+        batoh.odeberVec(v);
+
+        aktualniProstor.pridejVec(v);
+    }
+
+    public Batoh getBatoh()
+    {
+        return batoh;
+    }
 }

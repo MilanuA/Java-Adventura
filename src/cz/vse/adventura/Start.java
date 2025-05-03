@@ -1,19 +1,12 @@
 /* Soubor je ulozen v kodovani UTF-8.
  * Kontrola kódování: Příliš žluťoučký kůň úpěl ďábelské ódy. */
 package cz.vse.adventura;
-
-
-
 import cz.vse.adventura.logika.Hra;
 import cz.vse.adventura.logika.IHra;
 import cz.vse.adventura.uiText.TextoveRozhrani;
 
 /*******************************************************************************
- * Třída  Start je hlavní třídou projektu,
- * který představuje jednoduchou textovou adventuru určenou k dalším úpravám a rozšiřování
- *
- * @author    Jarmila Pavlíčková
- * @version   ZS 2016/2017
+ * Třída  Start je hlavní třídou projektu
  */
 public class Start
 {

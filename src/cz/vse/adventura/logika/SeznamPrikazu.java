@@ -1,5 +1,7 @@
 package cz.vse.adventura.logika;
 
+import cz.vse.adventura.logika.prikazy.IPrikaz;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -12,18 +14,11 @@ import java.util.Map;
  *
  *  Tato třída je součástí jednoduché textové hry.
  *
- *@author     Michael Kolling, Lubos Pavlicek, Jarmila Pavlickova
- *@version    pro školní rok 2016/2017
  */
-class SeznamPrikazu {
+public class SeznamPrikazu {
     // mapa pro uložení přípustných příkazů
-    private  Map<String,IPrikaz> mapaSPrikazy;
-    
-   
-    
-    /**
-     * Konstruktor
-     */
+    private  Map<String, IPrikaz> mapaSPrikazy;
+
     public SeznamPrikazu() {
         mapaSPrikazy = new HashMap<>();
     }

@@ -1,5 +1,9 @@
 package cz.vse.adventura.logika;
 
+import cz.vse.adventura.logika.prikazy.*;
+
+import java.util.Set;
+
 /**
  *  Třída Hra - třída představující logiku adventury.
  * 
@@ -15,17 +19,28 @@ package cz.vse.adventura.logika;
 public class Hra implements IHra {
     private SeznamPrikazu platnePrikazy;    // obsahuje seznam přípustných příkazů
     private HerniPlan herniPlan;
+    private Batoh batoh;
     private boolean konecHry = false;
 
     /**
      *  Vytváří hru a inicializuje místnosti (prostřednictvím třídy HerniPlan) a seznam platných příkazů.
      */
     public Hra() {
-        herniPlan = new HerniPlan();
+
+        Set<Vec> vychoziVeci = Set.of(
+                new Vec("Mapa", true, 1)
+        );
+
+        int maximalniHmotnost = 3;
+        batoh = new Batoh(maximalniHmotnost, vychoziVeci);
+
+        herniPlan = new HerniPlan(batoh);
+
         platnePrikazy = new SeznamPrikazu();
         platnePrikazy.vlozPrikaz(new PrikazNapoveda(platnePrikazy));
         platnePrikazy.vlozPrikaz(new PrikazJdi(herniPlan));
         platnePrikazy.vlozPrikaz(new PrikazKonec(this));
+        platnePrikazy.vlozPrikaz(new PrikazSeber(herniPlan));
     }
 
     /**
@@ -86,7 +101,7 @@ public class Hra implements IHra {
      *  
      *  @param  konecHry  hodnota false= konec hry, true = hra pokračuje
      */
-    void setKonecHry(boolean konecHry) {
+     public void setKonecHry(boolean konecHry) {
         this.konecHry = konecHry;
     }
     

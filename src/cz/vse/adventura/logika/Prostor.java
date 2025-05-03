@@ -12,8 +12,6 @@ import java.util.stream.Collectors;
  * Prostor může mít sousední prostory připojené přes východy. Pro každý východ
  * si prostor ukládá odkaz na sousedící prostor.
  *
- * @author Michael Kolling, Lubos Pavlicek, Jarmila Pavlickova
- * @version pro školní rok 2016/2017
  */
 public class Prostor {
 
@@ -34,30 +32,38 @@ public class Prostor {
         this.nazev = nazev;
         this.popis = popis;
         vychody = new HashSet<>();
+        veci = new HashMap<>();
     }
 
-    public boolean pridejVec(Vec v)
+    public Vec pridejVec(Vec v)
     {
         String nazev = v.getNazev();
 
         if(veci.containsKey(nazev))
-            return false;
+            throw new IllegalStateException("Věc "+ nazev + " se v již nachází v prostoru");
 
         veci.put(nazev, v);
-        return true;
+        return v;
     }
 
     public Vec getVec(String nazev){
-        return veci.get(nazev);
+       Vec vec = veci.get(nazev);
+
+       if(vec == null)
+           throw new IllegalStateException("Věc "+ nazev + " se v prostoru nenachází");
+
+        return vec;
     }
 
-    public boolean odeberVec(String nazev){
+    public Vec odeberVec(String nazev){
 
         if(!veci.containsKey(nazev))
-            return false;
+            throw new IllegalStateException("Věc "+ nazev + " se v protoru nenachází");
+
 
         veci.remove(nazev);
-        return true;
+        Vec v = getVec(nazev);
+        return v;
     }
     /**
      * Definuje východ z prostoru (sousední/vedlejsi prostor). Vzhledem k tomu,
