@@ -1,0 +1,39 @@
+[
+    {
+      "nazev": "starý duch Strážce hradu",
+      "dialog": [
+        "Zdravím tě, dobrodruhu!",
+        "Klíče jsou roztroušené po zemi Slovenské. Pouze čisté úmysly odemknou bránu času."
+      ]
+    },
+    {
+      "nazev": "dřevorubec",
+      "dialog": [
+        "Tak ty by ses rád dostal k tomu pařezu? Mohl bych ti pomoci..",
+        "Pokud mi přineseš rybu z Dunaje, půjčím ti svoji sekeryru.",
+        "Tak na co ještě čekáš? Utíkej.."
+      ]
+    },
+    {
+      "nazev": "správce muzea",
+      "dialog": [
+        "Dobrý den!",
+        "Máte mapu? Pokud ano, tak Vás rád zavedu do trezoru. (použíj příkaz 'dej' v případě, že máš mapu)"
+      ]
+    },
+    {
+      "nazev": "kupkyně",
+      "dialog": [
+        "Zdravím tě! Tak ty bys rád zrcadlo?",
+        "Udělám s tebou výměnný obchod. Pokud mi doneseš stříbrný prsten, který se nachází v truhle v zřícenině, dám ti ho."
+      ]
+    },
+    {
+      "nazev": "poutník",
+      "dialog": [
+        "Počkej!!",
+        "Ta truhla je moje!",
+        "Dobrá, dobrá.. Dám ti páčidlo, pokud mi přineseš jablko z Bratislavy."
+      ]
+    }
+]
