@@ -1,5 +1,6 @@
 package cz.vse.adventura.logika.prikazy;
 import cz.vse.adventura.logika.HerniPlan;
+import cz.vse.adventura.logika.veci.PouzitelnaVec;
 import cz.vse.adventura.logika.veci.Vec;
 
 public class PrikazSeber implements IPrikaz {
@@ -18,13 +19,19 @@ public class PrikazSeber implements IPrikaz {
 
         String nazevVeci = parametry[0];
 
-        try{
+        try {
             Vec vec = plan.seberVec(nazevVeci);
-            return "Věc " + vec.getNazev() + " byla vložena do batohu";
-        }
-        catch (Exception e) {
+
+            if (vec instanceof PouzitelnaVec) {
+                return "Věc '" + vec.getNazev() + "' byla vložena do batohu a lze ji použít.";
+            } else {
+                return "Věc '" + vec.getNazev() + "' byla vložena do batohu.";
+            }
+
+        } catch (Exception e) {
             return "Něco se pokazilo: " + e.getMessage();
         }
+
     }
 
     @Override

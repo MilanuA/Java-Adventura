@@ -33,7 +33,7 @@ public class PrikazPouzij implements IPrikaz {
         }
 
         PouzitelnaVec pouzitelnaVec = (PouzitelnaVec) vec;
-        return pouzitelnaVec.pouzij();
+        return pouzitelnaVec.pouzij(plan);
     }
     
     /**
