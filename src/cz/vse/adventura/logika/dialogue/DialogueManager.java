@@ -56,7 +56,7 @@ public class DialogueManager
      */
     public String dalsiRadek() {
         radek++;
-        String dialog = mluviciPostava.getNextDialog(radek);
+        String dialog = mluviciPostava.getDalsiRadek(radek);
 
         if (dialog == null) {
             ZastavitDialog();
@@ -64,7 +64,7 @@ public class DialogueManager
             return "Rozhovor s postavou skončil. " +  Barvy.ITALIC + "(nyní se můžeš znovu hýbat)" + Barvy.RESET;
         }
 
-        return "[" + mluviciPostava.getNazev() +  "]: " + dialog + Barvy.ITALIC +  " (pouzij prikaz dalsi)" + Barvy.RESET;
+        return "[" + mluviciPostava.getNazev() +  "]: " + dialog + Barvy.ITALIC +  " (použij příkaz další)" + Barvy.RESET;
     }
 
     /**

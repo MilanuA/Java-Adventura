@@ -16,16 +16,28 @@ public class TextUtils
 
         StringJoiner joiner = new StringJoiner(", ");
         for (Object element : collection) {
+            String jmeno = null;
             if (element instanceof Prostor) {
-                joiner.add(((Prostor) element).getNazev());
+                jmeno = ((Prostor) element).getNazev();
             } else if (element instanceof Vec) {
-                joiner.add(((Vec) element).getNazev());
+                jmeno = ((Vec) element).getNazev();
             } else if (element instanceof Postava) {
-                joiner.add(((Postava) element).getNazev());
+                jmeno = ((Postava) element).getNazev();
+            }
+
+            if (jmeno != null) {
+                joiner.add(capitalize(jmeno));
             }
         }
 
         return Barvy.BOLD + Barvy.BLUE + nazev + ":" + Barvy.RESET + " " + joiner.toString();
     }
+
+    private static String capitalize(String text) {
+        if (text == null || text.isEmpty()) return text;
+        return text.substring(0, 1).toUpperCase() + text.substring(1);
+    }
+
+
 
 }

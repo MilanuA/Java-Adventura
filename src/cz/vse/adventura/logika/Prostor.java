@@ -3,6 +3,7 @@ package cz.vse.adventura.logika;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import cz.vse.adventura.logika.veci.Vec;
+import cz.vse.adventura.utils.Barvy;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -166,7 +167,10 @@ public class Prostor {
      * @return Dlouhý popis prostoru
      */
     public String dlouhyPopis() {
-        return "Jsi v prostoru " + popis + "\n\n"
+        return "***********************************************\n\n"
+                +  "Jsi v prostoru "
+                + Barvy.ITALIC + popis + Barvy.RESET
+                + "\n\n"
                 + popisVseho();
     }
 
@@ -180,6 +184,7 @@ public class Prostor {
 
         vracenyText.append("\n").append(popisElementu("Postavy", postavy.values()));
 
+        vracenyText.append("\n").append("\n").append("***********************************************").append("\n");
         return vracenyText.toString();
     }
 

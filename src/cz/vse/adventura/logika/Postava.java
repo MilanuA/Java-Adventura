@@ -2,8 +2,10 @@ package cz.vse.adventura.logika;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import cz.vse.adventura.logika.veci.Vec;
 
 import java.util.List;
+import java.util.Map;
 
 public class Postava {
     private String nazev;
@@ -36,15 +38,7 @@ public class Postava {
         this.nazev = nazev;
     }
 
-    public List<String> getDialog() {
-        return dialog;
-    }
-
-    public void setDialog(List<String> dialog) {
-        this.dialog = dialog;
-    }
-
-    public String getNextDialog(int index) {
+    public String getDalsiRadek(int index) {
         List<String> aktivniDialog = promluvilSPostavou ? pokracovaniDialogu : dialog;
 
         if (index >= 0 && index < aktivniDialog.size()) {
@@ -58,12 +52,24 @@ public class Postava {
         this.promluvilSPostavou = promluvilSPostavou;
     }
 
+    public String prijmiVec(Vec vec, Batoh batoh, Map<String, Vec> dostupneVeci) {
+        if (pozadovanaVec == null || !pozadovanaVec.equalsIgnoreCase(vec.getNazev())) {
+            return getNazev() + " tuhle věc nechce.";
+        }
 
-    public String getPozadovanaVec() {
-        return pozadovanaVec;
+        if (odmena != null && !odmena.isEmpty()) {
+            Vec odmenenaVec = dostupneVeci.get(odmena);
+            if (odmenenaVec != null) {
+                try {
+                    batoh.pridejVec(odmenenaVec);
+                    return getNazev() + " si vzal " + vec.getNazev() + " a dal ti " + odmena + ".";
+                } catch (IllegalStateException e) {
+                    return "Věc byla odebrána, ale odměnu nelze vložit do batohu: " + e.getMessage();
+                }
+            }
+        }
+
+        return getNazev() + " si vzal " + vec.getNazev() + ".";
     }
 
-    public String getOdmena() {
-        return odmena;
-    }
 }

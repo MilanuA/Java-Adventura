@@ -3,6 +3,7 @@ package cz.vse.adventura.logika.veci.pouzitelneVeci;
 import cz.vse.adventura.logika.HerniPlan;
 import cz.vse.adventura.logika.veci.PouzitelnaVec;
 
+import java.util.List;
 import java.util.Objects;
 
 public class Zrcadlo extends PouzitelnaVec {
@@ -13,9 +14,13 @@ public class Zrcadlo extends PouzitelnaVec {
     @Override
     public String pouzij(HerniPlan plan) {
 
-        if(muzeBytPouzita(plan)) return "Zrcadlo zde nelze použít!";
+        if(!muzeBytPouzita(plan)) return "Zrcadlo zde nelze použít!";
 
-        return "Zrcadlo použito!";
+        List<String> predmety = List.of("ledový klíč");
+
+        String pridanoText = pridejPredmety(plan, predmety);
+
+        return "Použil si zrcadlo a díky němu roztálo zamrzlé jezero. Na povrch vyplaval <ledový klíč>. \n" + pridanoText;
     }
 
     @Override

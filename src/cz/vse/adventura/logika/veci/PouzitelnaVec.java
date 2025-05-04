@@ -1,6 +1,12 @@
 package cz.vse.adventura.logika.veci;
 
+import cz.vse.adventura.logika.Batoh;
 import cz.vse.adventura.logika.HerniPlan;
+import cz.vse.adventura.logika.Prostor;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 public abstract class PouzitelnaVec extends Vec {
 
@@ -8,12 +14,51 @@ public abstract class PouzitelnaVec extends Vec {
         super(nazev, prenositelna, hmotnost, true);
     }
 
-    public void pridejPredmety(Vec[] predmety){
+    /// <summary>
+    /// Pokusí se přidat seznam věcí do batohu hráče
+    /// Pokud se věc nevejde nebo není přenositelná, zůstane v aktuálním prostoru
+    /// Vrací zprávu o úspěchu nebo seznam nepřidaných věcí
+    /// </summary>
+    protected String pridejPredmety(HerniPlan plan, List<String> predmety) {
+        Batoh batoh = plan.getBatoh();
+        batoh.odeberVec(nazev);
 
+        Prostor prostor = plan.getAktualniProstor();
+        List<String> nepruchoziVeci = new ArrayList<>();
+        Map<String, Vec> dostupneVeci = plan.getDostupneVeci();
+
+        for (String nazev : predmety) {
+            Vec vec = dostupneVeci.get(nazev);
+            if (vec == null) {
+                nepruchoziVeci.add(nazev + " (neexistuje)");
+                continue;
+            }
+
+            try {
+                batoh.pridejVec(vec);
+            } catch (Exception e) {
+                nepruchoziVeci.add(nazev);
+                prostor.pridejVec(vec);
+            }
+        }
+
+
+        if (nepruchoziVeci.isEmpty()) {
+            return "Všechny věci byly úspěšně přidány do batohu.";
+        } else {
+            return "Následující věci nebyly přidány do batohu a zůstaly v místnosti: " +
+                    String.join(", ", nepruchoziVeci) + ".";
+        }
     }
 
+    /// <summary>
+    /// Abstraktní metoda, která definuje chování po použití věci
+    /// </summary>
     public abstract String pouzij(HerniPlan plan);
 
+    /// <summary>
+    /// Určuje, zda lze danou věc v aktuální situaci použít
+    /// </summary>
     public abstract boolean muzeBytPouzita(HerniPlan plan);
 }
 

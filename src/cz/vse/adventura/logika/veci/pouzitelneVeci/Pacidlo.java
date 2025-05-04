@@ -2,6 +2,8 @@ package cz.vse.adventura.logika.veci.pouzitelneVeci;
 
 import cz.vse.adventura.logika.HerniPlan;
 import cz.vse.adventura.logika.veci.PouzitelnaVec;
+
+import java.util.List;
 import java.util.Objects;
 
 public class Pacidlo extends PouzitelnaVec {
@@ -11,9 +13,13 @@ public class Pacidlo extends PouzitelnaVec {
 
     @Override
     public String pouzij(HerniPlan plan) {
-        if(muzeBytPouzita(plan)) return "Páčidlo zde nelze použít!";
 
-        return "Použil jsi páčidlo na truhlu. V truhle se nacházel <Stříbrný prsten> a <Mapa Slovenska>.";
+        if(!muzeBytPouzita(plan)) return "Páčidlo zde nelze použít!";
+
+        List<String> predmety = List.of("prsten", "mapa");
+
+        String pridanoText = pridejPredmety(plan, predmety);
+        return "Použil jsi páčidlo na truhlu. V truhle se nacházel <Stříbrný prsten> a <Mapa Slovenska>.\n" + pridanoText ;
     }
 
     @Override

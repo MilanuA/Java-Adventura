@@ -3,6 +3,7 @@ package cz.vse.adventura.logika.veci.pouzitelneVeci;
 import cz.vse.adventura.logika.HerniPlan;
 import cz.vse.adventura.logika.veci.PouzitelnaVec;
 
+import java.util.List;
 import java.util.Objects;
 
 public class Prut extends PouzitelnaVec {
@@ -13,9 +14,13 @@ public class Prut extends PouzitelnaVec {
     @Override
     public String pouzij(HerniPlan plan) {
 
-        if(muzeBytPouzita(plan)) return "Prut zde nelze použít!";
+        if(!muzeBytPouzita(plan)) return "Prut zde nelze použít!";
 
-        return "Použil jsi prut a chytil si <rybu>.";
+        List<String> predmety = List.of("ryba");
+
+        String pridanoText = pridejPredmety(plan, predmety);
+
+        return "Použil jsi prut a chytil si <rybu>.\n" + pridanoText;
     }
 
     @Override
