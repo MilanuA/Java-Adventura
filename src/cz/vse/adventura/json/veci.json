@@ -50,19 +50,19 @@
   {
     "nazev": "dřevěný klíč",
     "prenositelna": true,
-    "hmotnost": 1,
+    "hmotnost": 2,
     "pouzitelna": false
   },
   {
     "nazev": "ledový klíč",
     "prenositelna": true,
-    "hmotnost": 1,
+    "hmotnost": 2,
     "pouzitelna": false
   },
   {
     "nazev": "zlatý klíč",
     "prenositelna": true,
-    "hmotnost": 1,
+    "hmotnost": 2,
     "pouzitelna": false
   }
 ]

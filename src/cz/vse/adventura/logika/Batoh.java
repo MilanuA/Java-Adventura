@@ -1,6 +1,8 @@
 package cz.vse.adventura.logika;
 
+import cz.vse.adventura.logika.veci.PouzitelnaVec;
 import cz.vse.adventura.logika.veci.Vec;
+import cz.vse.adventura.utils.Barvy;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -78,7 +80,6 @@ public class Batoh
         veci.remove(v.getNazev());
         return v;
     }
-
     public String popisBatohu() {
         if (veci.isEmpty()) {
             return "[Batoh]: prázdný | 0 kg";
@@ -88,7 +89,19 @@ public class Batoh
         sb.append("[Batoh]: ");
 
         for (Vec vec : veci.values()) {
-            sb.append(vec.getNazev()).append(" (").append(vec.getHmotnost()).append(" kg), ");
+            String nazev = vec.getNazev();
+            String zobrazeni;
+
+            if (vec instanceof PouzitelnaVec) {
+                zobrazeni = Barvy.RED + nazev + Barvy.RESET;
+            } else {
+                zobrazeni = nazev;
+            }
+
+            sb.append(zobrazeni)
+                    .append(" (")
+                    .append(vec.getHmotnost())
+                    .append(" kg), ");
         }
 
         sb.setLength(sb.length() - 2);
@@ -97,6 +110,7 @@ public class Batoh
 
         return sb.toString();
     }
+
 
     private boolean vejdeSe(Vec v){
         return getAktualniHmotnost() + v.getHmotnost() <= this.maxHmotnost;

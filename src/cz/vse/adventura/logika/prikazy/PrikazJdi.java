@@ -39,7 +39,7 @@ public class PrikazJdi implements IPrikaz {
             return "Kam mám jít? Musíš zadat jméno východu";
         }
 
-        String smer = parametry[0];
+        String smer = parametry[0].toLowerCase();
 
         // zkoušíme přejít do sousedního prostoru
         Prostor sousedniProstor = plan.getAktualniProstor().vratSousedniProstor(smer);

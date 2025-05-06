@@ -88,7 +88,7 @@ public class HerniPlan {
                 }
             }
 
-            aktualniProstor = prostoryMapa.get("zřícenina");
+            aktualniProstor = prostoryMapa.get("hrad");
 
         } catch (IOException e) {
             System.err.println("Chyba při načítání souborů: " + e.getMessage());

@@ -17,15 +17,18 @@ public class PrikazMluv implements IPrikaz {
             return "Nevím, s kým mám mluvit. Napiš prosím jméno postavy.";
         }
 
-        String nazevPostavy = parametry[0];
+        String nazevPostavy = parametry[0].toLowerCase();
 
-        try{
-            Postava postava = plan.getAktualniProstor().getPostavu(nazevPostavy);
-            DialogueManager.getInstance().zacitDialog(postava);
+        Postava postava = plan.getAktualniProstor().getPostavu(nazevPostavy);
 
-            return "Rozhovor s postavou " + postava.getNazev() + " zahájen.\n\n" + DialogueManager.getInstance().dalsiRadek();
+        if (postava == null) {
+            return "Taková postava tu není.";
         }
-        catch (Exception e) {
+
+        try {
+            DialogueManager.getInstance().zacitDialog(postava);
+            return "Rozhovor s postavou " + postava.getNazev() + " zahájen.\n\n" + DialogueManager.getInstance().dalsiRadek();
+        } catch (Exception e) {
             return "Něco se pokazilo: " + e.getMessage();
         }
     }

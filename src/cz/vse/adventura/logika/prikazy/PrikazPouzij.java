@@ -21,7 +21,7 @@ public class PrikazPouzij implements IPrikaz {
             return "Nevím, co mám použít.";
         }
 
-        String nazevVeci = parametry[0];
+        String nazevVeci = parametry[0].toLowerCase();
         Vec vec = plan.getBatoh().getVec(nazevVeci);
 
         if (vec == null) {

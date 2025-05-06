@@ -19,7 +19,7 @@ public class Pacidlo extends PouzitelnaVec {
         List<String> predmety = List.of("prsten", "mapa");
 
         String pridanoText = pridejPredmety(plan, predmety);
-        return "Použil jsi páčidlo na truhlu. V truhle se nacházel <Stříbrný prsten> a <Mapa Slovenska>.\n" + pridanoText ;
+        return "Použil jsi páčidlo na truhlu. V truhle se nacházel <prsten> a <mapa>.\n" + pridanoText ;
     }
 
     @Override

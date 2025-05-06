@@ -17,7 +17,7 @@ public class PrikazSeber implements IPrikaz {
             return "Nevím, co mám sebrat. Napiš název věci";
         }
 
-        String nazevVeci = parametry[0];
+        String nazevVeci = parametry[0].toLowerCase();
 
         try {
             Vec vec = plan.seberVec(nazevVeci);

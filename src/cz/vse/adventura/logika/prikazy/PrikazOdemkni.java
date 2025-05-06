@@ -9,7 +9,7 @@ public class PrikazOdemkni implements IPrikaz {
 
     private static final String NAZEV = "odemkni";
 
-    private HerniPlan plan;
+    private final HerniPlan plan;
 
     public PrikazOdemkni(HerniPlan plan) {
         this.plan = plan;
@@ -30,7 +30,7 @@ public class PrikazOdemkni implements IPrikaz {
         if(maLedovy && maDreveny && maZlaty)
             return EndGame();
         else
-            return "Nemáš všechny klíče. Vrať se, až je budeš mít všechny";
+            return "Nemáš všechny klíče. Vrať se, až je budeš mít všechny.";
     }
 
     /**
@@ -43,7 +43,15 @@ public class PrikazOdemkni implements IPrikaz {
         return NAZEV;
     }
 
-    private String EndGame(){
-        return Barvy.BOLD + Barvy.GREEN + " Gratuluji! Odemkl jsi bránu a vyhrál hru!" + Barvy.RESET;
+    private String EndGame() {
+        String zprava = Barvy.BOLD + Barvy.GREEN +
+                "\n====================================\n" +
+                "  GRATULUJI! Odemkl jsi bránu a vyhrál hru!\n" +
+                "====================================\n" +
+                Barvy.RESET;
+
+        System.out.println(zprava);
+        System.exit(0);
+        return "";
     }
 }

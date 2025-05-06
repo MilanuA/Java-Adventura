@@ -35,8 +35,9 @@ public class PrikazNapoveda implements IPrikaz {
     @Override
     public String provedPrikaz(String... parametry) {
         return "Tvým úkolem je najít tři klíče a odemknout bránu.\n"
-        + "Můžeš zadat tyto příkazy:\n"
-        + platnePrikazy.vratNazvyPrikazu();
+                + "Předměty, které mají v batohu červenou barvu se dají pomocí příkazu <použij> použít. \n"
+                + "Můžeš zadat tyto příkazy:\n"
+                + platnePrikazy.vratNazvyPrikazu();
     }
     
      /**
