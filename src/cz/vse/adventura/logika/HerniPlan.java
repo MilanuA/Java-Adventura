@@ -97,8 +97,6 @@ public class HerniPlan {
         }
     }
 
-
-
     /**
      *  Metoda vrací odkaz na aktuální prostor, ve ktetém se hráč právě nachází.
      *
@@ -118,9 +116,6 @@ public class HerniPlan {
        aktualniProstor = prostor;
     }
 
-    public Map<String, Vec> getDostupneVeci() {
-        return dostupneVeci;
-    }
 
     public Vec seberVec(String nazev){
         Vec vec = getAktualniProstor().getVec(nazev);
@@ -135,4 +130,13 @@ public class HerniPlan {
     {
         return batoh;
     }
+
+    public void setDostupneVeci(Map<String, Vec> dostupneVeci) {
+        this.dostupneVeci = dostupneVeci;
+    }
+
+    public Map<String, Vec> getDostupneVeci() {
+        return dostupneVeci;
+    }
+
 }

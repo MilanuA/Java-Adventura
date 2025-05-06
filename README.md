@@ -56,7 +56,7 @@ Akce: Použij prut → získej rybu → dones do Oravy.
 | zkontroluj       ✅   | Zkontroluje, zda má hráč všechny 3 klíče.                      | zkontroluj              |
 | konec          ✅     | Ukončí hru.                                                    | konec                   |
 | seber <věc>       ✅  | Vezme předmět z aktuální místnosti.                            | seber prut              |
-| pouzij <věc>         | Použije konkrétní předmět (např. sekera,prut…). | pouzij zrcadlo          |
+| pouzij <věc>      ✅   | Použije konkrétní předmět (např. sekera,prut…). | pouzij zrcadlo          |
 | mluv <postava>    ✅  | Zahájí rozhovor s postavou v místnosti.                        | mluv dřevorubec         |
 | dalsi            ✅   | Posune se na další větu v rozhovoru.                           | dalsi                   |
 | dej <věc> <postava>   ✅   | Předá předmět postavě (např. dáš rybu dřevorubci).             | dej ryba dřevorubec     |

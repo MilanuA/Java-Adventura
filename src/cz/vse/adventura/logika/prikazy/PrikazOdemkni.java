@@ -15,7 +15,6 @@ public class PrikazOdemkni implements IPrikaz {
         this.plan = plan;
     }
 
-
     @Override
     public String provedPrikaz(String... parametry) {
 

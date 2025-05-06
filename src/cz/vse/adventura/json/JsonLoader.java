@@ -32,7 +32,9 @@ public class JsonLoader {
 
     public static Map<String, Vec> nactiVeciDoMapy(String cesta) throws IOException {
         List<Vec> veciList = nactiVeci(cesta);
+
         Map<String, Vec> veciMapa = new HashMap<>();
+
         for (Vec vec : veciList) {
             veciMapa.put(vec.getNazev(), vec);
         }

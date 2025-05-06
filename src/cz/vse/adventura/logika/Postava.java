@@ -58,7 +58,9 @@ public class Postava {
         }
 
         if (odmena != null && !odmena.isEmpty()) {
+
             Vec odmenenaVec = dostupneVeci.get(odmena);
+
             if (odmenenaVec != null) {
                 try {
                     batoh.pridejVec(odmenenaVec);

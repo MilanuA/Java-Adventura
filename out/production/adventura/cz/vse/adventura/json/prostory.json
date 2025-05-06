@@ -1,7 +1,7 @@
 [
   {
     "nazev": "zřícenina",
-    "popis": "Zbytky staré tvrze. Nachází se tu truhla a poutník.",
+    "popis": "Zbytky staré tvrze. Uvnitř tvrze se nachází truhla, před kterou stojí poutník, se kterým si můžeš promluvit.",
     "vychody": ["tatry", "košice", "hrad"],
     "veci": [],
     "postavy" : ["poutník"]
@@ -43,7 +43,7 @@
   },
   {
     "nazev": "dunaj",
-    "popis": "Řeka, kde můžeš rybařit.",
+    "popis": "Řeka, kde můžeš rybařit. Na břehu se nachází prut, který můžeš sebrat.",
     "vychody": ["košice"],
     "veci": ["prut"],
     "postavy" : []
