@@ -64,5 +64,17 @@
     "prenositelna": true,
     "hmotnost": 2,
     "pouzitelna": false
+  },
+    {
+    "nazev": "klobouk",
+    "prenositelna": false,
+    "hmotnost": 2,
+    "pouzitelna": false
+  }.
+      {
+    "nazev": "prázdná_peněženka",
+    "prenositelna": false,
+    "hmotnost": 1,
+    "pouzitelna": false
   }
 ]
