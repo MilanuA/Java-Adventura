@@ -31,7 +31,7 @@
     "nazev": "bratislava",
     "popis": "Hlavní město, ve kterém se nachází muzeum, jenž má zavřený trezor. Všimneš si správce muzea, se kterým můžeš promluvit.",
     "vychody": ["hrad"],
-    "veci": ["jablko"],
+    "veci": ["jablko", "prázdná_peněženka"],
     "postavy" : ["správce"]
   },
   {
@@ -45,7 +45,7 @@
     "nazev": "dunaj",
     "popis": "Řeka, kde můžeš rybařit. Na břehu se nachází prut, který můžeš sebrat.",
     "vychody": ["košice"],
-    "veci": ["prut"],
+    "veci": ["prut", "klobouk"],
     "postavy" : []
   }
 ]
