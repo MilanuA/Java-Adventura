@@ -3,6 +3,12 @@ import cz.vse.adventura.logika.HerniPlan;
 import cz.vse.adventura.logika.veci.PouzitelnaVec;
 import cz.vse.adventura.logika.veci.Vec;
 
+/**
+ *  Třída PrikazSeber implementuje pro hru příkaz seber
+ *
+ * @author Alex Milanů
+ * @version pro školní rok 2024/2025
+ */
 public class PrikazSeber implements IPrikaz {
     private static final String NAZEV = "seber";
     private HerniPlan plan;

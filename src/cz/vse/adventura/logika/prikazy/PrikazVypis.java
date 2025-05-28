@@ -6,6 +6,13 @@ enum TypPrikazu {
     batoh,
 }
 
+/**
+ *  Třída PrikazVypis implementuje pro hru příkaz vypiš
+ *
+ *@author    Alex Milanů
+ *@version    pro školní rok 2024/2025
+ *
+ */
 public class PrikazVypis implements IPrikaz {
 
     private static final String NAZEV = "vypiš";

@@ -5,6 +5,12 @@ import cz.vse.adventura.logika.HerniPlan;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ *  Třída PrikazZkontrolujKlice implementuje pro hru příkaz zkontroluj klíče
+ *
+ * @author Alex Milanů
+ * @version pro školní rok 2024/2025
+ */
 public class PrikazZkontrolujKlice implements IPrikaz {
     private static final String NAZEV = "zkontroluj";
     private HerniPlan plan;

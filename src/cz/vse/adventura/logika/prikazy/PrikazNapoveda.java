@@ -5,8 +5,8 @@ import cz.vse.adventura.logika.SeznamPrikazu;
  *  Třída PrikazNapoveda implementuje pro hru příkaz napoveda.
  *  Tato třída je součástí jednoduché textové hry.
  *  
- *@author     Jarmila Pavlickova, Luboš Pavlíček
- *@version    pro školní rok 2016/2017
+ *@author     Jarmila Pavlickova, Luboš Pavlíček, Alex Milanů
+ *@version    pro školní rok 2024/2025
  *  
  */
 public class PrikazNapoveda implements IPrikaz {

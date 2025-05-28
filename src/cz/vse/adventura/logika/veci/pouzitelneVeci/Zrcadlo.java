@@ -6,6 +6,12 @@ import cz.vse.adventura.logika.veci.PouzitelnaVec;
 import java.util.List;
 import java.util.Objects;
 
+/**
+ * Třída slouží jako implementace použitelné věci
+ *
+ * @author Alex Milanů
+ * @version pro školní rok 2024/2025
+ */
 public class Zrcadlo extends PouzitelnaVec {
     public Zrcadlo(String nazev, boolean prenositelna, Integer hmotnost) {
         super(nazev, prenositelna, hmotnost);

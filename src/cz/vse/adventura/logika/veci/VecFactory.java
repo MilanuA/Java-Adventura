@@ -1,22 +1,30 @@
 package cz.vse.adventura.logika.veci;
 
+import cz.vse.adventura.json.VecDTO;
 import cz.vse.adventura.logika.veci.pouzitelneVeci.Pacidlo;
 import cz.vse.adventura.logika.veci.pouzitelneVeci.Prut;
 import cz.vse.adventura.logika.veci.pouzitelneVeci.Sekera;
 import cz.vse.adventura.logika.veci.pouzitelneVeci.Zrcadlo;
 
-/// <summary>
-/// Tovární třída pro vytváření instancí třídy Vec na základě dat z VecDTO
-/// Rozhoduje, zda vytvořit běžnou nebo použitelnou věc dle jejího názvu a vlastností
-/// </summary>
+/**
+ * Tovární třída pro vytváření instancí třídy Vec na základě dat z VecDTO
+ * Rozhoduje, zda vytvořit běžnou nebo použitelnou věc dle jejího názvu a vlastností
+ *
+ *@author     Alex Milanů
+ *@version    pro školní rok 2024/2025
+ *
+ */
 public class VecFactory {
 
-    /// <summary>
-    /// Vytváří instanci třídy Vec nebo její podtřídy na základě zadaných dat
-    /// Pokud je věc označena jako použitelná, vytvoří instanci příslušné třídy podle názvu
-    /// Pokud není použitelná, vrací instanci základní třídy Vec
-    /// </summary>
-    /// <returns>Instance třídy Vec nebo její podtřídy</returns>
+    /**
+     * Vytváří instanci třídy {@code Vec} nebo její podtřídy na základě zadaných dat.
+     * <p>
+     * Pokud je věc označena jako použitelná, vytvoří se instance příslušné podtřídy
+     * podle názvu. Pokud není použitelná, vrací se instance základní třídy {@code Vec}.
+     *
+     * @return Instance třídy {@code Vec} nebo její podtřídy
+     */
+
     public static Vec vytvorVec(VecDTO data) {
         if (!data.pouzitelna()) {
             return new Vec(data.nazev(), data.prenositelna(), data.hmotnost(), false);

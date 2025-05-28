@@ -4,7 +4,10 @@ import cz.vse.adventura.logika.Postava;
 import cz.vse.adventura.utils.Barvy;
 
 /**
- * Singleton třída, která spravuje probíhající dialog mezi hráčem a postavou.
+ * Singleton třída, která spravuje probíhající dialog mezi hráčem a postavou
+ *
+ * @author Alex Milanů
+ * @version pro školní rok 2024/2025
  */
 public class DialogueManager
 {

@@ -4,8 +4,8 @@ package cz.vse.adventura.logika.prikazy;
  *  Třída implementující toto rozhraní bude ve hře zpracovávat jeden konkrétní příkaz.
  *  Toto rozhraní je součástí jednoduché textové hry.
  *  
- *@author     Jarmila Pavlickova
- *@version    pro školní rok 2016/2017
+ *@author     Jarmila Pavlickova, Alex Milanů
+ *@version    pro školní rok 2024/2025
  *  
  */
 public interface IPrikaz {

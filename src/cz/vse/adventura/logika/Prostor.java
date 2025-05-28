@@ -19,8 +19,9 @@ import static cz.vse.adventura.utils.TextUtils.popisElementu;
  * Prostor může mít sousední prostory připojené přes východy. Pro každý východ
  * si prostor ukládá odkaz na sousedící prostor.
  *
+ * @author Alex Milanů
+ * @version pro školní rok 2024/2025
  */
-@JsonIgnoreProperties({"vychody", "veci", "postavy"})
 public class Prostor {
 
     private String nazev;
@@ -29,10 +30,6 @@ public class Prostor {
     private Set<Prostor> vychody = new HashSet<>();// obsahuje sousední místnosti
     private Map<String, Vec> veci;
     private Map<String, Postava> postavy;
-
-    @JsonCreator
-    public Prostor() {
-    }
 
     /**
      * Vytvoření prostoru se zadaným popisem, např. "kuchyň", "hala", "trávník

@@ -1,7 +1,7 @@
 [
   {
     "nazev": "zřícenina",
-    "popis": "Zbytky staré tvrze. Nachází se tu truhla a poutník.",
+    "popis": "Zbytky staré tvrze. Uvnitř tvrze se nachází truhla, před kterou stojí poutník, se kterým si můžeš promluvit.",
     "vychody": ["tatry", "košice", "hrad"],
     "veci": [],
     "postavy" : ["poutník"]
@@ -11,7 +11,7 @@
     "popis": "Starobylý hrad s bránou, kterou lze otevřít pouze třemi klíči (ledový, dřevěný a zlatý). Koused od brány sedí duch, se kterým si můžeš promluvit.",
     "vychody": ["orava", "bratislava", "zřícenina"],
     "veci" : [],
-    "postavy" : ["starý duch Strážce hradu"]
+    "postavy" : ["duch"]
   },
   {
     "nazev": "orava",
@@ -31,21 +31,21 @@
     "nazev": "bratislava",
     "popis": "Hlavní město, ve kterém se nachází muzeum, jenž má zavřený trezor. Všimneš si správce muzea, se kterým můžeš promluvit.",
     "vychody": ["hrad"],
-    "veci": ["jablko"],
-    "postavy" : ["správce muzea"]
+    "veci": ["jablko", "prázdná_peněženka"],
+    "postavy" : ["správce"]
   },
   {
     "nazev": "košice",
     "popis": "Městský trh, ve kterém se nachází kupkyně, se kterou si můžeš promluvit.",
-    "vychody": ["zřícenina"],
+    "vychody": ["zřícenina", "dunaj"],
     "veci": [],
     "postavy" : ["kupkyně"]
   },
   {
     "nazev": "dunaj",
-    "popis": "Řeka, kde můžeš rybařit.",
+    "popis": "Řeka, kde můžeš rybařit. Na břehu se nachází prut, který můžeš sebrat.",
     "vychody": ["košice"],
-    "veci": ["rybářský prut"],
+    "veci": ["prut", "klobouk"],
     "postavy" : []
   }
 ]

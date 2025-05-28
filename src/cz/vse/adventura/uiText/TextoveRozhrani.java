@@ -14,8 +14,8 @@ import cz.vse.adventura.logika.IHra;
  *  
  *  
  *
- *@author     Michael Kolling, Lubos Pavlicek, Jarmila Pavlickova
- *@version    pro školní rok 2016/2017
+ *@author     Michael Kolling, Lubos Pavlicek, Jarmila Pavlickova, Alex Milanů
+ *@version    pro školní rok 2024/2025
  */
 
 public class TextoveRozhrani {

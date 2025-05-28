@@ -9,8 +9,8 @@ package cz.vse.adventura.logika;
 /**
  *  Rozhraní které musí implementovat hra, je na ně navázáno uživatelské rozhraní
  *
- *@author     Michael Kolling, Lubos Pavlicek, Jarmila Pavlickova
- *@version    pro školní rok 2016/2017
+ *@author     Michael Kolling, Lubos Pavlicek, Jarmila Pavlickova, Alex Milanů
+ *@version    pro školní rok 2024/2025
  */
 public interface IHra
 {

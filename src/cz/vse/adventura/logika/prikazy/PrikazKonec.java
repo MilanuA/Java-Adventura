@@ -6,8 +6,8 @@ import cz.vse.adventura.logika.Hra;
  *  Třída PrikazKonec implementuje pro hru příkaz konec.
  *  Tato třída je součástí jednoduché textové hry.
  *  
- *@author     Jarmila Pavlickova
- *@version    pro školní rok 2016/2017
+ *@author     Jarmila Pavlickova, Alex Milanů
+ *@version    pro školní rok 2024/2025
  *  
  */
 

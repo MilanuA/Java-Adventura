@@ -32,14 +32,14 @@
   {
     "nazev": "jablko",
     "prenositelna": true,
-    "hmotnost": 1,
+    "hmotnost": 3,
     "pouzitelna": false
   },
   {
     "nazev": "prut",
     "prenositelna": true,
     "hmotnost": 2,
-    "pouzitelna": false
+    "pouzitelna": true
   },
   {
     "nazev": "ryba",
@@ -50,18 +50,30 @@
   {
     "nazev": "dřevěný klíč",
     "prenositelna": true,
-    "hmotnost": 1,
+    "hmotnost": 2,
     "pouzitelna": false
   },
   {
     "nazev": "ledový klíč",
     "prenositelna": true,
-    "hmotnost": 1,
+    "hmotnost": 2,
     "pouzitelna": false
   },
   {
     "nazev": "zlatý klíč",
     "prenositelna": true,
+    "hmotnost": 2,
+    "pouzitelna": false
+  },
+  {
+    "nazev": "klobouk",
+    "prenositelna": false,
+    "hmotnost": 2,
+    "pouzitelna": false
+  },
+  {
+    "nazev": "prázdná_peněženka",
+    "prenositelna": false,
     "hmotnost": 1,
     "pouzitelna": false
   }

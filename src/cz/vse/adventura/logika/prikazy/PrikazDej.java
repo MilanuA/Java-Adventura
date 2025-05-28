@@ -4,6 +4,12 @@ import cz.vse.adventura.logika.veci.Vec;
 
 import java.util.Map;
 
+/**
+ *  Třída PrikazDej implementuje pro hru příkaz dej
+ *
+ * @author Alex Milanů
+ * @version pro školní rok 2024/2025
+ */
 public class PrikazDej implements IPrikaz {
     private static final String NAZEV = "dej";
     private HerniPlan plan;

@@ -5,6 +5,12 @@ import cz.vse.adventura.utils.Barvy;
 
 import java.util.Objects;
 
+/**
+ *  Třída PrikazOdemkni implementuje pro hru příkaz odemkni
+ *
+ * @author Alex Milanů
+ * @version pro školní rok 2024/2025
+ */
 public class PrikazOdemkni implements IPrikaz {
 
     private static final String NAZEV = "odemkni";

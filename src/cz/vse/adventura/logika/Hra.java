@@ -4,9 +4,7 @@ import cz.vse.adventura.logika.dialogue.DialogueManager;
 import cz.vse.adventura.logika.prikazy.*;
 import cz.vse.adventura.utils.Barvy;
 
-import java.io.IOException;
 import java.util.Objects;
-import java.util.Set;
 
 /**
  *  Třída Hra - třída představující logiku adventury.
@@ -16,8 +14,8 @@ import java.util.Set;
  *  Vypisuje uvítací a ukončovací text hry.
  *  Také vyhodnocuje jednotlivé příkazy zadané uživatelem.
  *
- *@author     Michael Kolling, Lubos Pavlicek, Jarmila Pavlickova
- *@version    pro školní rok 2016/2017
+ *@author     Michael Kolling, Lubos Pavlicek, Jarmila Pavlickova, Alex Milanů
+ *@version    pro školní rok 2024/2025
  */
 
 public class Hra implements IHra {
@@ -41,6 +39,7 @@ public class Hra implements IHra {
 
         platnePrikazy.vlozPrikaz(new PrikazNapoveda(platnePrikazy));
         platnePrikazy.vlozPrikaz(new PrikazJdi(herniPlan));
+        platnePrikazy.vlozPrikaz(new PrikazPoloz(herniPlan));
         platnePrikazy.vlozPrikaz(new PrikazKonec(this));
         platnePrikazy.vlozPrikaz(new PrikazSeber(herniPlan));
         platnePrikazy.vlozPrikaz(new PrikazZkontrolujKlice(herniPlan));
@@ -99,7 +98,7 @@ public class Hra implements IHra {
         }
         String textKVypsani=" .... ";
 
-         if (platnePrikazy.jePlatnyPrikaz(slovoPrikazu))
+         if (platnePrikazy.jePlatnyPrikaz(slovoPrikazu.toLowerCase()))
          {
              DialogueManager dialogManager = DialogueManager.getInstance();
 
@@ -107,7 +106,7 @@ public class Hra implements IHra {
                  return "Je třeba pokračovat v dialogu. Nelze jej přerušit.";
              }
 
-             IPrikaz prikaz = platnePrikazy.vratPrikaz(slovoPrikazu);
+             IPrikaz prikaz = platnePrikazy.vratPrikaz(slovoPrikazu.toLowerCase());
              textKVypsani = prikaz.provedPrikaz(parametry);
          }
         else

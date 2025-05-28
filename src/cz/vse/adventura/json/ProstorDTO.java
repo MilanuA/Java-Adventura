@@ -1,6 +1,12 @@
 package cz.vse.adventura.json;
 import java.util.List;
 
+/**
+ * Tato třída slouží jako mezičlánek mezi JSON a třídou, do které se daný JSON serializuje
+ *
+ * @author Alex Milanů
+ * @version pro školní rok 2024/2025
+ */
 public record ProstorDTO(
         String nazev,
         String popis,

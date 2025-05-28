@@ -3,6 +3,12 @@ import cz.vse.adventura.logika.HerniPlan;
 import cz.vse.adventura.logika.Postava;
 import cz.vse.adventura.logika.dialogue.DialogueManager;
 
+/**
+ *  Třída PrikazMluv implementuje pro hru příkaz mluv
+ *
+ * @author Alex Milanů
+ * @version pro školní rok 2024/2025
+ */
 public class PrikazMluv implements IPrikaz {
     private static final String NAZEV = "mluv";
     private HerniPlan plan;

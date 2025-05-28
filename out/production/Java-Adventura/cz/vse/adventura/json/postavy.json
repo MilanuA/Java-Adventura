@@ -1,9 +1,9 @@
 [
   {
-    "nazev": "starý duch Strážce hradu",
+    "nazev": "duch",
     "dialog": [
       "Zdravím tě, dobrodruhu!",
-      "Klíče jsou roztroušené po zemi Slovenské. Pouze čisté úmysly odemknou bránu času."
+      "Klíče jsou roztroušené po zemi Slovenské. Pouze čisté úmysly a tři klíče odemknou bránu času."
     ],
     "pokracovaniDialogu": [
       "Už jsme se potkali, poutníče.",
@@ -14,18 +14,18 @@
     "nazev": "dřevorubec",
     "dialog": [
       "Tak ty by ses rád dostal k tomu pařezu? Mohl bych ti pomoci..",
-      "Pokud mi přineseš rybu z Dunaje, půjčím ti svoji sekeryru.",
-      "Tak na co ještě čekáš? Utíkej.."
+      "Pokud mi přineseš rybu z Dunaje, půjčím ti svoji sekyru.",
+      "Tak na co ještě čekáš? Utíkej.. (použíj příkaz 'dej' v případě, že máš rybu)"
     ],
     "pokracovaniDialogu": [
       "Rybu z Dunaje už máš? Bez ní sekera zůstává u mě.",
-      "Dřevo se samo neporazí. Vrať se, až něco přineseš."
+      "Pařez se sám neporazí. Vrať se, až mi přineseš rybu. (použíj příkaz 'dej' v případě, že máš rybu)"
     ],
     "pozadovanaVec": "ryba",
     "odmena": "sekera"
   },
   {
-    "nazev": "správce muzea",
+    "nazev": "správce",
     "dialog": [
       "Dobrý den!",
       "Máte mapu? Pokud ano, tak Vás rád zavedu do trezoru. (použíj příkaz 'dej' v případě, že máš mapu)"
@@ -34,20 +34,21 @@
       "Znovu vás vítám. Už máte tu mapu?",
       "Bez mapy vás k trezoru nepustím. Historie má svá pravidla."
     ],
-    "pozadovanaVec": "mapa Slovenska",
+    "pozadovanaVec": "mapa",
     "odmena": "zlatý klíč"
   },
   {
     "nazev": "kupkyně",
     "dialog": [
       "Zdravím tě! Tak ty bys rád zrcadlo?",
-      "Udělám s tebou výměnný obchod. Pokud mi doneseš stříbrný prsten, který se nachází v truhle v zřícenině, dám ti ho."
+      "Udělám s tebou výměnný obchod. Pokud mi doneseš stříbrný prsten, který se nachází v truhle v zřícenině, dám ti ho.",
+      "(použíj příkaz 'dej' v případě, že máš zrcadlo)"
     ],
     "pokracovaniDialogu": [
       "Máš ten stříbrný prsten? Bez něj obchod neuzavřeme.",
       "Zrcadlo čeká... Ale ne pro prázdné ruce."
     ],
-    "pozadovanaVec": "stříbrný prsten",
+    "pozadovanaVec": "prsten",
     "odmena": "zrcadlo"
   },
   {
@@ -55,7 +56,8 @@
     "dialog": [
       "Počkej!!",
       "Ta truhla je moje!",
-      "Dobrá, dobrá.. Dám ti páčidlo, pokud mi přineseš jablko z Bratislavy."
+      "Dobrá, dobrá.. Dám ti páčidlo, pokud mi přineseš jablko z Bratislavy.",
+      "(použíj příkaz 'dej' v případě, že máš páčidlo)"
     ],
     "pokracovaniDialogu": [
       "Jablko z Bratislavy! Nezapomeň, jen s ním dostaneš páčidlo.",

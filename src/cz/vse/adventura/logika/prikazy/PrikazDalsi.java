@@ -1,8 +1,12 @@
 package cz.vse.adventura.logika.prikazy;
-import cz.vse.adventura.logika.HerniPlan;
-import cz.vse.adventura.logika.Postava;
 import cz.vse.adventura.logika.dialogue.DialogueManager;
 
+/**
+ *  Třída PrikazDalsi implementuje pro hru příkaz další
+ *
+ * @author Alex Milanů
+ * @version pro školní rok 2024/2025
+ */
 public class PrikazDalsi implements IPrikaz {
     private static final String NAZEV = "další";
 

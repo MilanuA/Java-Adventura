@@ -1,5 +1,10 @@
 package cz.vse.adventura.utils;
 
+/**
+ * Třída {@code Barvy} obsahuje kódy pro barevné a formátované výpisy do konzole
+ * @author Alex Milanů
+ * @version pro školní rok 2024/2025
+ */
 public class Barvy
 {
     public static String RESET = "\u001B[0m";

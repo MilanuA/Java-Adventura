@@ -2,6 +2,12 @@ package cz.vse.adventura.logika.prikazy;
 import cz.vse.adventura.logika.HerniPlan;
 import cz.vse.adventura.logika.veci.Vec;
 
+/**
+ *  Třída PrikazPoloz implementuje pro hru příkaz polož
+ *
+ * @author Alex Milanů
+ * @version pro školní rok 2024/2025
+ */
 public class PrikazPoloz implements IPrikaz {
 
     private static final String NAZEV = "poloz";

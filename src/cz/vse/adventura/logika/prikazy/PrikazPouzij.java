@@ -5,6 +5,13 @@ import cz.vse.adventura.logika.Prostor;
 import cz.vse.adventura.logika.veci.PouzitelnaVec;
 import cz.vse.adventura.logika.veci.Vec;
 
+/**
+ *  Třída PrikazPouzij implementuje pro hru příkaz použij věc
+ *
+ *@author    Alex Milanů
+ *@version    pro školní rok 2024/2025
+ *
+ */
 
 public class PrikazPouzij implements IPrikaz {
     private static final String NAZEV = "použij";
