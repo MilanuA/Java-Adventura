@@ -1,4 +1,4 @@
-package cz.vse.adventura.json;
+package cz.vse.adventura.logika.jsonNacitani;
 
 /**
  * Tato třída slouží jako mezičlánek mezi JSON a třídou, do které se daný JSON  serializuje

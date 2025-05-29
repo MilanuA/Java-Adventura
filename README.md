@@ -47,18 +47,18 @@ Předmět: Rybářský prut (leží na břehu, volně k sebrání). <br>
 Výsledek: Použij prut → získej rybu → dones do Oravy.
 
 ## Předměty a využití:
-| Příkaz               | Popis                                                          | Příklad použití         |
-|----------------------|----------------------------------------------------------------|-------------------------|
-| jdi <místo>         | Přesun do jiné lokace, pokud cesta existuje.                   | jdi orava               |
-| napoveda          | Vypíše seznam dostupných příkazů.                              | napoveda                |
-| zkontroluj          | Zkontroluje, zda má hráč všechny 3 klíče.                      | zkontroluj              |
-| konec               | Ukončí hru.                                                    | konec                   |
-| seber <věc>         | Vezme předmět z aktuální místnosti.                            | seber prut              |
-| pouzij <věc>         | Použije konkrétní předmět (např. sekera,prut…). | pouzij zrcadlo          |
-| mluv <postava>      | Zahájí rozhovor s postavou v místnosti.                        | mluv dřevorubec         |
-| dalsi               | Posune se na další větu v rozhovoru.                           | dalsi                   |
-| dej <věc> <postava\>   | Předá předmět postavě (např. dáš rybu dřevorubci).             | dej ryba dřevorubec     |
-| odemkni        | Ve Spišském hradě – použije 3 klíče a ukončí hru vítězstvím.   | odemkni branu           |
+| Příkaz               | Popis                                                          | Příklad použití     |
+|----------------------|----------------------------------------------------------------|---------------------|
+| jdi <místo>          | Přesun do jiné lokace, pokud cesta existuje.                   | jdi orava           |
+| nápověda             | Vypíše seznam dostupných příkazů.                              | nápověda            |
+| zkontroluj           | Zkontroluje, zda má hráč všechny 3 klíče.                      | zkontroluj          |
+| konec                | Ukončí hru.                                                    | konec               |
+| seber <věc>          | Vezme předmět z aktuální místnosti.                            | seber prut          |
+| použij <věc>         | Použije konkrétní předmět (např. sekera,prut…). | použij zrcadlo      |
+| mluv <postava>       | Zahájí rozhovor s postavou v místnosti.                        | mluv dřevorubec     |
+| další                | Posune se na další větu v rozhovoru.                           | další               |
+| dej <věc> <postava\> | Předá předmět postavě (např. dáš rybu dřevorubci).             | dej ryba dřevorubec |
+| odemkni              | Ve Spišském hradě – použije 3 klíče a ukončí hru vítězstvím.   | odemkni             |
 
 
 ## Závěr hry

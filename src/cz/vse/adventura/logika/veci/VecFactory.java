@@ -1,6 +1,6 @@
 package cz.vse.adventura.logika.veci;
 
-import cz.vse.adventura.json.VecDTO;
+import cz.vse.adventura.logika.jsonNacitani.VecDTO;
 import cz.vse.adventura.logika.veci.pouzitelneVeci.Pacidlo;
 import cz.vse.adventura.logika.veci.pouzitelneVeci.Prut;
 import cz.vse.adventura.logika.veci.pouzitelneVeci.Sekera;

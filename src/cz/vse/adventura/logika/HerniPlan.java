@@ -4,8 +4,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 import java.util.HashMap;
-import cz.vse.adventura.json.JsonLoader;
-import cz.vse.adventura.json.ProstorDTO;
+import cz.vse.adventura.logika.jsonNacitani.JsonLoader;
+import cz.vse.adventura.logika.jsonNacitani.ProstorDTO;
 import cz.vse.adventura.logika.veci.Vec;
 
 
@@ -35,22 +35,20 @@ public class HerniPlan {
     public HerniPlan(Batoh batoh) {
         this.batoh = batoh;
 
-        zalozProstoryHry("src/cz/vse/adventura/json/veci.json",
-                "src/cz/vse/adventura/json/prostory.json",
-                "src/cz/vse/adventura/json/postavy.json");
+        zalozProstoryHry();
     }
 
-    private void zalozProstoryHry(String veci, String prostory, String postavy) {
+    private void zalozProstoryHry() {
         try {
-            dostupneVeci = JsonLoader.nactiVeciDoMapy(veci);
+            dostupneVeci = JsonLoader.nactiVeciDoMapy();
 
-            List<Postava> postavyList = JsonLoader.nactiPostavy(postavy);
+            List<Postava> postavyList = JsonLoader.nactiPostavy();
             Map<String, Postava> postavyMapa = new HashMap<>();
             for (Postava postava : postavyList) {
                 postavyMapa.put(postava.getNazev(), postava);
             }
 
-            List<ProstorDTO> prostoryDTO = JsonLoader.nactiProstoryDTO(prostory);
+            List<ProstorDTO> prostoryDTO = JsonLoader.nactiProstoryDTO();
             prostoryMapa = new HashMap<>();
             for (ProstorDTO dto : prostoryDTO) {
                 Prostor p = new Prostor(dto.nazev(), dto.popis());

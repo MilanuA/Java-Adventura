@@ -1,4 +1,4 @@
-package cz.vse.adventura.json;
+package cz.vse.adventura.logika.jsonNacitani;
 import java.util.List;
 
 /**

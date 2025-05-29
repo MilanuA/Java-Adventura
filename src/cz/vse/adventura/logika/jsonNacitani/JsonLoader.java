@@ -1,4 +1,4 @@
-package cz.vse.adventura.json;
+package cz.vse.adventura.logika.jsonNacitani;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -7,7 +7,9 @@ import cz.vse.adventura.logika.Postava;
 import cz.vse.adventura.logika.veci.VecFactory;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -26,14 +28,17 @@ public class JsonLoader {
      * Načítá seznam věcí ze souboru ve formátu JSON
      * Používá {@code VecDTO} a tovární metodu pro vytvoření instancí třídy {@code Vec} nebo jejích podtříd
      *
-     * @param cesta cesta k souboru s JSON daty
      * @return seznam instancí třídy {@code Vec}
      */
     private static List<Vec> nactiVeci(String cesta) throws IOException {
         ObjectMapper mapper = new ObjectMapper();
 
-        File file = new File(cesta);
-        VecDTO[] dataPole = mapper.readValue(file, VecDTO[].class);
+        InputStream inputStream = JsonLoader.class.getClassLoader().getResourceAsStream(cesta);
+        if (inputStream == null) {
+            throw new FileNotFoundException("Soubor " + cesta + " nebyl nalezen v resources.");
+        }
+
+        VecDTO[] dataPole = mapper.readValue(inputStream, VecDTO[].class);
 
         List<Vec> veci = new ArrayList<>();
         for (VecDTO data : dataPole) {
@@ -43,14 +48,14 @@ public class JsonLoader {
         return veci;
     }
 
+
     /**
      * Načítá věci ze souboru a vrací je jako mapu, kde klíčem je název věci
      *
-     * @param cesta cesta k souboru s JSON daty
      * @return mapa názvů a odpovídajících instancí třídy {@code Vec}
      */
-    public static Map<String, Vec> nactiVeciDoMapy(String cesta) throws IOException {
-        List<Vec> veciList = nactiVeci(cesta);
+    public static Map<String, Vec> nactiVeciDoMapy() throws IOException {
+        List<Vec> veciList = nactiVeci("json/veci.json");
 
         Map<String, Vec> veciMapa = new HashMap<>();
 
@@ -63,23 +68,27 @@ public class JsonLoader {
     /**
      * Načítá seznam postav ze souboru ve formátu JSON
      *
-     * @param cesta cesta k souboru s JSON daty
      * @return seznam instancí třídy {@code Postava}
      */
-    public static List<Postava> nactiPostavy(String cesta) throws IOException {
+    public static List<Postava> nactiPostavy() throws IOException {
         ObjectMapper mapper = new ObjectMapper();
-        return mapper.readValue(new File(cesta), new TypeReference<List<Postava>>() {});
+
+        InputStream inputStream = JsonLoader.class.getClassLoader().getResourceAsStream("json/postavy.json");
+
+        return mapper.readValue(inputStream, new TypeReference<List<Postava>>() {});
     }
 
     /**
      * Načítá seznam DTO objektů představujících prostory ze souboru ve formátu JSON
      *
-     * @param cesta cesta k souboru s JSON daty
      * @return seznam instancí třídy {@code ProstorDTO}
      */
-    public static List<ProstorDTO> nactiProstoryDTO(String cesta) throws IOException {
+    public static List<ProstorDTO> nactiProstoryDTO() throws IOException {
         ObjectMapper mapper = new ObjectMapper();
-        return mapper.readValue(new File(cesta), new TypeReference<List<ProstorDTO>>() {});
+
+        InputStream inputStream = JsonLoader.class.getClassLoader().getResourceAsStream("json/prostory.json");
+
+        return mapper.readValue(inputStream, new TypeReference<List<ProstorDTO>>() {});
     }
 }
 
