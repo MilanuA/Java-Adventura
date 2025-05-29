@@ -79,7 +79,7 @@ public class JsonLoader {
     }
 
     /**
-     * Načítá seznam DTO objektů představujících prostory ze souboru ve formátu JSON
+     * Načítá seznam DTO objektů představujících prostory z JSONu
      *
      * @return seznam instancí třídy {@code ProstorDTO}
      */
